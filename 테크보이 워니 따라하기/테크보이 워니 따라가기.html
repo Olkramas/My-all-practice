@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <title>테크보이 워니 따라가기</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+     <!--href가 파일의 위치 rel, type은 어떤 타입의 파일인지 말하는 것 일단 패스-->
+    <meta name="description" content="테크보이 워니 따라가기">
+    <!-- 소셜미디어에 공유될 때 웹사이트 스크린샷이랑 같이 뜨는 설명 보여주기-->
+    <!--  <style>
+      .item {
+        color: red;
+      }
+    </style>
+style 태그는 이 안에서 css 코드를 쓸 수 있게 하는 태그
+body 부분 div class확인
+그런데 4번 라인에 href로 style.css를 불러오기 때문에 이렇게 다 쓰면
+복잡하고 불편함. 그래서 css코드는 따로 만들어서 하는게 나음-->
+    <meta charset="utf-8"
+
+  </head>
+
+
+    <body>
+    <div class="item">hello</div>
+  <!-- class속성을 이용해서 css로 스타일링을 할 수 있음-->
+  
+  <!-- 텍스트 관련 태그들-->
+    <h1>안녕</h1>
+    <h2>ㅎㅇ</h2>
+    <b>ㅎㅇ</b>
+    <i>sdf</i>
+    <p>
+    안녕하십니까 html을 공부중입니다.
+    </p>
+
+  <!-- 미디어 관련 태그들-->
+    <img src=".jpg" width="300">
+    <video src=".mp4" controls width="500"></video>
+  
+  <br>
+  <!-- 링크 태그-->
+    <a href="www.goole.com">google</a>
+    <a href="facebook.com" target="_blank">facebook</a>
+
+
+   <!-- 표 태그 -->
+  <table border="1">
+<!-- border라는 속성을 써서 테두리 만들기-->
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>나이</th>
+      </tr>  
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>태백</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>ssdfs</td>
+        <td>123</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+<!-- 목록 태그-->
+  <ol>
+    <li>gd</li>
+    <li>dds</li>
+  </ol>
+
+  <ul>
+    <li>sdfs</li>
+    <li>sdfsx</li>
+  </ul>
+<!-- 구역을 나누는 태그-->
+  <div class="top">상단</div>
+  <div class="mid">중단</div>
+  <div class="bot">하단</div>
+  <style>
+    .top {
+      background: red;
+      height: 50px;
+    } 
+    .mid {
+      background: blue;
+      height: 50px;
+    }
+    .bot {
+      background: yellow;
+      height: 50px;
+    }
+  </style>
+
+  <span class="like">좋아요</span>
+  <span>구독</span>
+  <span>댓글</span>
+  <style>
+  .like {
+    background: red;
+  }
+  </style>
+<!-- div는 한줄 전체 공간 차지, span은 내용물 만큼의 공간만 차지-->
+
+<!-- input 관련 태그-->
+  텍스트 <input type="text"/>
+  체크박스<input type="checkbox"/>
+  라디오<input type="radio">
+  색깔<input type="color">
+  여러 문장<textarea name="d" id="" cols="30" rows="10"></textarea>
+<!-- 로그인 형식 만들어보기-->
+  <form>
+    <input type="email" placeholder="이메일"/>
+    <input type="password" placeholder="비밀번호">
+    <button type="sumit">로그인 따봉</button>
+  </form>
+  </body>
+</html>
