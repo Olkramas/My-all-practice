@@ -1,0 +1,110 @@
+<!doctype html>
+<!-- zerocho tv 유튜브 채널 영상 참고html-->
+<!-- 레이아웃을 짤때는 가로로 먼저 레이아웃을 생각하고 최대한 
+자른 다음 새로로 자르는 순서로 레이아웃을 짜야됨.-->
+
+<!-- 웹페이지 소스창을 열어서 좌우로 움직이면서 본문이 어디로 정렬되는지 파악하기
+네이버는 구역자체가 가운데로 정렬됨.-->
+<!-- 컨텐츠가 가운데 정렬이면 div의 경우 한줄을 다 차지하기 때문에 정렬될 것이 없음
+구역자체가 가운데 정렬이면 창 크기를 바꿀때마다 가운데로 정렬됨.-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>네이버</title>
+    <!-- 아이콘 불러오기-->
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?1" />
+    <link rel="stylesheet" href="./naver.css">
+    <!-- href="./은 현재 폴더안에 있는 파일을 의미함"
+    이렇게 css파일을 지정할 수 있음.
+    rel로 역할을 구분할 수 있음 shortcut icon= 아이콘, stylesheet-->
+  </head>
+  <body>
+    <header>
+<!-- <div id="header"> div로만 쓰면 구별이 안돼서 이렇게 표현할 수도 있음.
+< header 태그 사용ㄱㄱ -->
+            <div>
+              <span>네이버를 시작페이지로</span>
+              <span>쥬니어네이버</span>
+              <span>해피빈</span>
+            </div>
+<!-- 텍스트만 필요하다면 div 보다는 span사용-->            
+<!-- span은 웹에서 display: inline;(자기 컨텐츠만큼의 공간만 차지) 이라고 나옴
+div 는 display: block;(너비를 100%다 차지)
+그리고 display: inline-block(자기 컨텐츠, 설정(width,height)만큼의 공간 차지) 이렇게 세 종류-->            
+        <div id="header-center">
+<!-- 이런 텍스트의 경우 div 를 써도 되지만 span을 많이 씀-->
+<!--<div style="margin: 0 auto; width: 1130px">
+header구역에 컨텐츠들이 div로 묶여서 한줄을 다 차지하기때문에
+div style="margin: 0 auto;" 라는 css코드를 써도 움직이지 않는 것-->
+<!-- 그래서 width: 1130px라는 코드를 붙여서 넓이를 설정하면 됨.
+그럼 컨텐츠를 가운데 정렬을 하는것이 아닌 구역 자체를 가운데 정렬가능-->
+<!-- 컨텐츠 가운데 정렬은 따로 있음.-->
+<!-- css 간단 구조 설명
+    속성명(margin): 값(0 auto); 속성명(width): 값(1130px) 
+  속성이 여러개일때는 세미콜론; 으로 구분함.-->
+<!--  이렇게 html문서 안에 css를 쓰는걸 인라인 방식이라고 함.-->
+<!-- 이 방식은 권장하지 않음. html은 구조와 컨텐츠,
+ css는 디자인, 자바는 동작을 담당하는게 깔끔함.-->
+          <div id="header-search">
+            <h1><a href="https://www.naver.com">네이버</a></h1>
+            <h2 class="blind">검색창</h2> <!-- 시각장애인용 스크린리더-->
+            <fieldset>
+              <legend>검색</legend>
+              <input />
+              <button>검색</button>
+              <input type="checkbox">
+              <input type="radio" name="group">
+              <input type="radio" name="group">
+            </fieldset>
+        </div>
+      </div>
+    </header>
+<!-- 네비게이션 태그nav -->
+  <nav>
+    <ul>
+      <li>메일</li>
+      <li>카페</li>
+      <li>블로그</li>
+      <li>지식인</li>
+      <li>쇼핑</li>
+    </ul>
+  </nav>
+
+  <main>
+    <ol>
+      <h2>비연합뉴스</h2>
+      <li><h3>충격) "깃허브 너무 어려워 난황"</h3></li>
+      <li><h3>속보) "어떡하면 좋을지 전혀 감도 못잡아..."</h3></li>
+
+    </ol>
+  <h3>언론사 목록</h3>
+    <ul>
+      <li><img src="국민일보.png" alt="국민일보"></li>
+    </ul>
+  <h3>로그인</h3>
+  <h3>뉴스</h3>
+  <h3>법률</h3>
+  <h3>쇼핑</h3>
+  </main>
+
+<!-- 이 구역은 footer역할로 세개의 div가 같은 역할을 해서 
+footer로 묶어준 모습-->
+  <footer>
+    <div>공지사항</div>
+    <div>creators</div>
+    <div>회사소개</div>
+  </footer>
+
+  </body>
+<!-- div로 쓰면 어떤 역할인지 모르기 때문에 
+header, main, nav, footer,(article, aside, figure) 같은 div태그인데 
+이름이 붙은거라 생각하기(역학은 같음)
+div로 떡칠하지말고 이름 붙여주기 근데 제약이 있음. -->
+<!-- vaildity같은 확장프로그램으로 확인 가능. 완전히 지키는 건 힘듦.-->
+
+<!-- header 눈에 제일 잘띄는,큰 부분, 제일 윗 부분-->
+<!-- nav 메뉴들 나열된 곳에 사용-->
+<!-- main 메인 컨텐츠가 있는 곳, 메인 컨텐츠이기 때문에 한번만 써야된다.-->
+<!-- footer 회사 소개 등 부가 정보-->
+
+</html>
