@@ -31,8 +31,8 @@
 <!-- span은 웹에서 display: inline;(자기 컨텐츠만큼의 공간만 차지) 이라고 나옴
 div 는 display: block;(너비를 100%다 차지)
 그리고 display: inline-block(자기 컨텐츠, 설정(width,height)만큼의 공간 차지) 이렇게 세 종류-->            
-        <div id="header-center">
 <!-- 이런 텍스트의 경우 div 를 써도 되지만 span을 많이 씀-->
+<div id="header-center">
 <!--<div style="margin: 0 auto; width: 1130px">
 header구역에 컨텐츠들이 div로 묶여서 한줄을 다 차지하기때문에
 div style="margin: 0 auto;" 라는 css코드를 써도 움직이지 않는 것-->
@@ -49,7 +49,7 @@ div style="margin: 0 auto;" 라는 css코드를 써도 움직이지 않는 것--
             <h1><a href="https://www.naver.com">네이버</a></h1>
             <h2 class="blind">검색창</h2> <!-- 시각장애인용 스크린리더-->
             <fieldset>
-              <legend>검색</legend>
+              <legend class="blind">검색</legend>
               <input />
               <button>검색</button>
               <input type="checkbox">
