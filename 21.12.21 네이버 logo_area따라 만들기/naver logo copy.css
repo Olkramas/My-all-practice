@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+html body{
+    margin: 0;
+    padding: 0;
+}
+
+/* html과 바디에도 웹 브라우저가 기본으로 적용하는 마진이 있음 그걸 없애주는 과정 */
+#logo_area{
+
+    margin: 0 auto;
+    width: 1130px;
+    height: 160px;
+
+}
+#logo_area_center{
+    display: inline-block;
+    margin: 0 auto;
+    width: 1130px;
+}
+#logo_area a{
+    display: inline-block;
+    width: 222px;
+    height: 52px;
+    background: url(sp_search.png) -4px -4px no-repeat;
+    vertical-align: middle;
+    position: relative;
+    /*다른애들은 안 건들고 얘만 움직이고 싶을때 쓰는position: relative;*/
+    top: -1px;
+    right: -7px;
+}
+#logo_area h1{
+    display: none;
+}
+#logo_area fieldset{
+    display: inline-block;
+    width: 582px;
+    height: 52px;
+    border: 2px solid #19ce60;
+    padding: 12px 0 12px 10px;
+    vertical-align: middle;
+    position: relative;
+    /*버튼에서 position: absoulute;를 사용하고 버튼이 필드셋에 붙기를 원하니까
+    여기에 position: relative;를 쓰면 됨*/
+}
+#logo_area input{
+    /*브라우저는 기본적으로 input 태그를 display: inline-block;으로 지정해 둠.
+    그래서 너비랑 높이를 적용해도 알아서 적용이 됨! inline,block이랑 차이점 기억하기*/
+    width: 405px;
+    height: 23px;
+    border: none;
+    padding: 0;
+    vertical-align: top;/*입력창을 필드셋 안으로 넣기위한 코드 
+    너비랑 높이 조절하면 중간에 위치가능. 정확한 기능은 아직 모름*/
+    outline: none;
+}
+#logo_area fieldset button{
+    width: 51px;
+    height: 51px;
+    border: none;
+    padding: 0;
+    background-color: #19ce60;
+    position: absolute;
+    right: -2px;
+    top: -1px;
+    /*포지션, right, top을 설정하고 픽셀을 움직이면서 맞출 수 있음.
+    html은 기본적으로 위에서 아래로 왼쪽에서 오른쪽으로 정렬되나, position을 
+    이용해서 내가 임의로(디자인상에서) 그 흐름을 바꿀때 사용함.*/
+
+    /*
+    background-color: #19ce60; 백그라운드 컬러 설정
+    background-image: url(sp_search.png);
+    background-position: 11px -44px; 이미지 스프라이트에서 
+    내가 원하는 그림 찾기위한 px변경
+    background-repeat: no-repeat;
+    background-size로 변경을 하면 이미지 자체 픽셀이 설정값 만큼 설정됨
+    */
+}
+#search_image{
+    background-image: url(sp_search.png);
+    background-position: -4px -60px;
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 21px;
+    display: inline-block;/*기본적으로 span은 display: inline;인데 이때는
+    가로세로 높이를 임의로 바꿀 수 없음. 그래서 inline-block으로 바꿔줘야됨*/
+    margin: 15px; /*버튼의 중앙에 오게 이미지를 채우려면 마진을 조절해서 조절
+    할 수 있음. 후에 positon을 배우는데 그건 더 쉬움. 이 방법도 있다~*/
+    /*
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); == transform은 태그를 변형시키는 속성
+    포지션으로는 이렇게 할 수 있음.
+    본인이 편한방법 정해서 쭉 가는게 나음.
+    */
+}
+/*SEARCH 필드셋 버튼에 이미지를 불러오는게 아니라 버튼 따로 이미지 따로 불러오기 위한
+#search_image*/
+.blind {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+}
+
+#fixed_ex{
+    position: fixed;
+    display: inline-block;
+    width: 100px;
+    height: 100PX;
+    top: 50px;
+    right: 270px;
+    border: 1px solid black;
+    border-radius: 50px;
+
+}
+#top_menu{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+/*
+15강 필기내용 참고
+*/
