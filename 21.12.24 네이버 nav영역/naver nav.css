@@ -25,10 +25,10 @@ html body{
     background: url(sp_search.png) -4px -4px no-repeat;
     vertical-align: middle;
     position: relative;
-
-    top: -1px;
-    right: -7px;
+    top: 0px;
+    right: -12px;
 }
+
 #logo_area h1{
     display: none;
 }
@@ -77,9 +77,9 @@ html body{
     height: 1px;
 }
 #top_menu{
-    height: 38px;
-    position: relative;
-    right: -841px;
+    display: block;
+    float: right;
+
 }
 nav ul{
     margin: 0;
@@ -137,3 +137,27 @@ nth 쓰지말고 last쓰면 됨
 이렇게 하나하나 다 하면 나중에 바꿀때도 힘들기 때문. */
 /* nth child는 순서에 의존하기 때문에 css를 처음부터 다 바꿔야 되는 상황이 생김
 차라리 div id를 줘서 하는게 나중을 위해서 더 나을 수 있음. */
+#search_bar{
+    display: inline-block;
+    top: 38px;
+    position: relative;
+/* search_bar(형제태그)가 float의 영역을 만약 침범한다 그러면
+clear: both;로 search_bar를 내려 줄 수 있음(영역이 겹치는 부분에 사용). 지금 내가 짠 코드는 서로 전혀 겹치는
+부분이 없어서 clear: both;로 해결이 안돼서 포지션으로 만졌음.  */
+}
+/* float을 사용해서 top메뉴를 우측 상단으로 올렸지만,
+center_align이 부모 태그로 search_bar가 float을 감싸는 상황이 되었음.
+  나는 topmenue랑 searchbar 랑 아에 다른 div로 묶어서 float은 그대로 설정하고
+  searchbar는 display: inline-block으로 float밑에 블록 포멧팅 컨텍스트를 만들어서 
+  감싸는 것을 막음. overflow는 안됨..*/
+
+/* id, class는 두단어로 만들기. div id는 한번밖에 못쓰기 때문에 두단어로 조합하는게 편함
+class는 여러번 쓰기 때문에 한단어 이상으로 조합하기.
+-,_,--, .. 등등 명명법이 회사마다 방식이 있음.
+크롤링(웹사이트 데이터를 가져간는 행위) 때문에 외계어로 명명된 경우도 있음. */
+#top_menu span:first-child{
+    height: 21px;
+    color: #888;
+    letter-spacing: -1px;
+    font-size: 11px;
+}
