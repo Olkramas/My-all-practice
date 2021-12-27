@@ -13,5 +13,5 @@ print(z.index(1)) #z에서 1이라는 엘레멘트가 몇번째 자리에 있나
 #=== assignment- 튜플안에 값을 업데이트 하는 것
 x[0] = 10  #======== list에서 됐던 엘레멘트를 바꾸는게 tuple에서는 안됨.
 
-for n in x:
+for n in x: #list처럼 엘레멘트들을 나열가능.
     print(n)
