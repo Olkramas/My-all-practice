@@ -1,0 +1,192 @@
+*{
+    box-sizing: border-box;
+    font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+    /* 폰트 적용 */
+}
+html body{
+    margin: 0;
+    padding: 0;
+}
+#logo_area{
+    margin: 0 auto;
+    width: 1130px;
+    height: 170px;
+    position: relative;
+    top: 15px;
+    margin-bottom: 12px;
+}
+.center_align{
+    margin: 0 auto;
+    width: 1130px;
+}
+#logo_area a{
+    display: inline-block;
+    width: 222px;
+    height: 52px;
+    background: url(sp_search.png) -4px -4px no-repeat;
+    vertical-align: middle;
+    position: relative;
+    top: 0px;
+    right: -12px;
+}
+
+#logo_area h1{
+    display: none;
+}
+#logo_area fieldset{
+    display: inline-block;
+    width: 582px;
+    height: 52px;
+    border: 2px solid #19ce60;
+    padding: 12px 0 12px 10px;
+    vertical-align: middle;
+    position: relative;
+}
+#logo_area input{
+    width: 405px;
+    height: 23px;
+    border: none;
+    padding: 0;
+    vertical-align: top;
+    outline: none;
+}
+#logo_area fieldset button{
+    width: 51px;
+    height: 51px;
+    border: none;
+    padding: 0;
+    background-color: #19ce60;
+    position: absolute;
+    right: -2px;
+    top: -1px;
+}
+#search_image{
+    background-image: url(sp_search.png);
+    background-position: -4px -60px;
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin: 15px;
+}
+.blind {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+}
+#top_menu{
+    display: block;
+    float: right;
+
+}
+nav{
+    height: 52px;
+    border-top: 1px solid #f1f3f6;
+    border-bottom: 2px solid #f1f3f6;
+}
+nav ul{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li{
+    display: inline-block;
+    padding-top: 10px;
+    /* padding을 줘서 클릭할 수 있는 공간을 이동. a태그의 경우 패딩도 클릭하면 링크로 이동함. */
+    
+}
+
+.nav-mail-only{
+    display: inline-block;
+    width: 21px;
+    height: 21px; /* 배경 너비 높이 설정 */
+    background: url(./sp_main.png) no-repeat -420px -278px; /* 스프라이트에서 이미지 찾기 */
+    background-size: 444px 439px; /* 배경사이즈 압축 */
+    
+}
+/* .nav-mail-only{
+    display: inline-block;
+    width: 26px;
+    height: 22px;
+    background: url(./sp_main.png) no-repeat -432px -288px;
+    background-size: 1756%;
+    position: relative;
+    top: 2px;
+
+} */
+.nav-mail{
+    display: inline-block;
+    height: 21px;
+    background-image: url(./sp_nav.png);
+    background-repeat: no-repeat;
+    margin-left: -5px;
+    width: 26px;
+    background-position: 1px -279px;
+    margin-left: 2px;
+}
+.nav-cafe{
+    display: inline-block;
+    height: 20px;
+    background-image: url(./sp_nav.png);
+    background-repeat: no-repeat;
+    margin-left: 8px;
+    width: 27px;
+    background-position: -279px -47px;
+}
+.nav-blog{
+    display: inline-block;
+    height: 20px;
+    background-image: url(./sp_nav.png);
+    background-repeat: no-repeat;
+    margin-left: 8px;
+    width: 41px;
+    background-position: -101px -177px;
+}
+.nav-knowin{
+    display: inline-block;
+    height: 19px;
+    width: 40px;
+    background: url(./sp_nav.png) no-repeat -101px -152px;
+}
+#search_bar{
+    display: inline-block;
+    top: 38px;
+    position: relative;
+    margin-top: 16px;
+    right: 21px;
+}
+
+#top_menu span{
+    height: 21px;
+    color: #888;
+    letter-spacing: -1px;
+    font-size: 11px;
+}
+.nav-divider{
+    display: inline-block;
+    margin: 18px 16px 0;
+    width: 1px;
+    height: 14px;
+    background: #ebeef3;
+    /* 구분선 float대신 inline-block사용.
+    ul이 block이라서 똑같이 바꿔줌. */
+}
+nav button{
+    position: relative;
+    right: -406px;
+}
+#search-ranking{
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    right: -622px;
+}
+#rank-number{
+    margin-top: -9px;
+    color: #00ab33;
+    font-size: 16px;
+}
