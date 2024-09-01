@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+            html, body {
+                padding: 0;
+                margin: 0;
+            }
+            body {
+                background: url(../img/바탕화면.jpg) repeat fixed;
+                background-size: cover;
+            }
+            #container{
+                width: 960px;
+                margin: 0 auto;
+                overflow: hidden;
+                
+            }
+            #main {
+                display: inline-block;
+                width: 918px;
+                padding: 0 20px;
+                border-radius: 20px;
+                border: 1px solid #e7e7e7;
+                background-color: #f5f6f7;
+            }
+            footer {
+                clear: both;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+                #nav-top-right {
+                margin-top: 30px;
+                margin-bottom: 50px;
+                width: 938px;
+                border: 1px solid #e7e7e7;
+                background-color: #f5f6f7;
+                height: 50px;
+                line-height: 10px;
+                border-radius: 20px;
+                height: 60px;
+            }
+            #nav-top-right ul {
+                float: right;
+                margin-right: 20px;
+                width: 500px;
+                margin-left: 200px;
+            }
+            #nav-top-right li {
+                float: right;
+                margin: 0 auto;
+                margin-right: 14px;
+                margin-bottom: 10px;
+                list-style: none;
+                color: black;
+                font-size: 12px;
+            }     
+            section {
+                width: 720px;
+                float: left;
+                padding: 10px
+                
+            }
+            #nav-top-right {
+                margin-top: 30px;
+                margin-bottom: 50px;
+                width: 938px;
+                border: 1px solid #e7e7e7;
+                background-color: #f5f6f7;
+                height: 50px;
+                line-height: 28px;
+                border-radius: 20px;
+                height: 60px;
+            }
+            #nav-top-right ul {
+                float: right;
+                margin-right: 20px;
+                width: 500px;
+                margin-left: 100px;
+            }
+            #nav-top-right li {
+                float: right;
+                margin: 0 auto;
+                margin-right: 14px;
+                margin-bottom: 10px;
+                list-style: none;
+                color: black;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            article {
+                border: 1px solid #ccc;
+                padding: 10px;
+                float: left;
+                background-color: #fff;
+                margin: 20px 6px;
+                border-radius: 20px;
+                text-align: justify;
+                line-height: 2;
+                width: 325px;
+                height: 325px;
+            }
+            aside{
+                border: 1px solid #dbdbdb;
+                border-radius: 20px;
+                background-color: #fff;
+                width: 156px;
+                float: right;
+                margin: 0 auto;
+                padding: 10px 10px;
+                margin-top: 55px;
+            }
+            aside img {
+                width: 155px;
+                border-radius: 10px;
+                margin: 20px 0;
+            }
+            aside a {
+                display: block;
+                padding: 1px;
+                width: 50px;
+                height: 40px;
+                border: #ccc;
+                background-color: #ccc;
+                border-radius: 50%;
+                position: fixed;
+                text-align: center;
+                right: 390px;
+                bottom: 20px;
+                font-size: 10px;
+                padding-top: 5px;
+                line-height: 12px;
+            }
+            aside p {
+                margin-top: 5px;
+                color: #7b7b7b;
+            }
+            footer {
+                border-top: 1px solid #e7e7e7;
+                margin-top: 50px;
+                background: #f5f6f7;
+                height: 300px;
+                text-align: center;
+                line-height: 80px;
+                padding-top: 150px; 
+            }
+            .short {
+                line-height: 1.7;
+            }
+            h2 {
+                margin-left: 30px;
+                display: inline-block;
+                text-align: center;
+                line-height: 17px;
+                font-size: 25px;
+            }
+            hr {
+                width: 890px;
+                text-align: center;
+                background: #ccc;
+                height: 1px;
+                border: 0;
+            }
