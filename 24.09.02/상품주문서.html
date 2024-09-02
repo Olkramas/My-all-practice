@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품주문서</title>
+    <style>
+        #container {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 10px 25px;
+        }
+        form li {
+            margin-bottom: 5px; 
+            list-style: none;
+        }
+        form label {
+            display: inline-block;
+            width: 80px;
+        }
+        .re-size {
+            display: inline-block;
+            width: 35px;
+        }
+        .re-size2 {
+            width: 400px;
+        }
+        .re-size3 {
+            width: 435px;
+        }
+        legend {
+            color: blueviolet;
+            font-weight: 900;
+            font-size: 20px;
+        }
+        fieldset {
+            margin: 10px 0;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .no-border {
+            border: none;
+            text-align: center;
+        }
+        .memo {
+            float: left;
+            font-weight: 900;
+            padding-right: 6px;
+        }
+        textarea {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>상품주문서</h2>
+        <form>
+            <fieldset>
+                <legend>개인정보</legend>
+                <ul>
+                    <li>
+                        <label class="bold" for="u-id">이름</label>
+                        <input type="text" id="u-id" name="u-id" placeholder="여백 없이 입력" autofocus>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label class="bold" for="u-tel">연락처</label>
+                        <input type="tel" id="u-tel" name="u-tel" placeholder="연락 가능한 번호">
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>배송지 정보</legend>
+                <ul>
+                    <li>
+                        <label class="bold" for="u-add">주소</label>
+                        <input class="re-size3" type="text" id="u-add" name="u-add">
+                    </li>
+                    <li>
+                        <label class="bold" for="u-num">전화번호</label>
+                        <input type="text" id="u-num" name="u-num" >
+                    </li>
+                    <li>
+                        <label class="memo" for="memo">메모</label>
+                        <textarea name="memo" cols="60" rows="5"></textarea>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>주문 정보</legend>
+                <ul>
+                    <li>
+                        <label class="re-size2"><input type="checkbox" name="checksome" value="cham">
+                            경북 성주 참외<small>(5kg)</small> <input class="re-size" type="number" id="c-count"> Box</label>
+                    </li>
+                    <li>
+                        <label class="re-size2"><input type="checkbox" name="checksome" value="cham" checked>
+                            경북 영천 포도<small>(5kg)</small> <input class="re-size" type="number" id="c-count"> Box</label>
+                    </li>
+                    <li>
+                        <label class="re-size2"><input type="checkbox" name="checksome" value="cham">
+                            경북 봉화 수박<small>(5kg)</small> <input class="re-size" type="number" id="c-count"> Box</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset class="no-border">
+                <button type="submit">주문하기</button>
+                <button type="reset">다시작성</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
