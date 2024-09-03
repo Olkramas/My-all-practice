@@ -5,29 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         #container {
             width: 1000px;
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
-        }
-        header {
-            background-color: beige;
-            width: 100%;
             text-align: center;
         }
+        header {
+            width: 1000px;
+            background-color: black;
+        }
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #nav-right {
+            margin-left: auto;
+        }
         aside {
-            background-color: beige;
-            width: 20%;
+            background-color: #bbb;
+            width: 200px;
+            height:  500px;
         }
         section {
-            background-color: #ddd;
-            width: 60%;
+            width: 600px;
+            height: 500px;
+            padding: 10px;
+        }
+        fieldset {
+            background-color: #ccc;
         }
         footer {
-            background-color: #ddd;
-            width: 100%;
+            background-color: #ccc;
+            width: 1000px;
         }
+        
     </style>
 </head>
 <body>
@@ -39,9 +55,7 @@
                         <li><a href="#">메인메뉴</a></li>
                         <li><a href="#">메인메뉴</a></li>
                         <li><a href="#">메인메뉴</a></li>
-                    </ul>
-                    <ul>
-                        <li class="nav-right"><a href="#">공지사항</a></li>
+                        <li id="nav-right"><a href="#">공지사항</a></li>
                     </ul>
                 </nav>
         </header>

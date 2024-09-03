@@ -4,20 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <link rel="stylesheet" href="css/최태백.css">
+    <style>
+        #container {
+            width: 960px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        header nav {
+            background-color: black;
+            overflow: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            width: 80px;
+            padding: 40px;
+            
+        }
+        nav a:hover {
+            background-color: yellow;
+            color: green;
+        }
+        li {
+            list-style: none;
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            float: left;
+            margin: 0;
+        }
+        #nav-top-right {
+            float: right;
+        }
+    </style>
 </head>
 <body>
     <div id="container">
         <header>
-            <h2 class="home">최태백의 홈페이지에 온 것을 환영합니다.</h2>
+            <h2>최태백의 홈페이지에 온 것을 환영합니다.</h2>
                 <nav>
                     <ul>
                         <li><a href="#">메인메뉴</a></li>
                         <li><a href="#">메인메뉴</a></li>
                         <li><a href="#">메인메뉴</a></li>
-                    </ul>
-                    <ul>
-                        <li class="fr"><a href="#">공지사항</a></li>
+                        <li id="nav-top-right"><a href="#">공지사항</a></li>
                     </ul>
                 </nav>
         </header>

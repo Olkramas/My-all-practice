@@ -14,6 +14,9 @@ body {
     width: 90%;
     margin: 10px auto;
 }
+section {
+    width: 100%;
+}
 header {
     width: 100%;
     background-color: greenyellow;
@@ -23,13 +26,15 @@ header {
 #container div h3 {
     position: absolute;
     bottom: 20px;
-    right: 20px;
-    font-size: 30px;
-    color: white;
-    text-shadow: 1px 1px 3px #fff;
+     right: 20px;
+     font-size: 30px;
+     color: white;
+     text-shadow: 1px 1px 3px #fff
 }
-section {
-    width: 100%;
+footer {
+    background-color: beige;
+    text-align: center;
+    padding: 30px
 }
 #menu1 {
     background: url(/24.09.01-basic/img/천혜향.jfif) no-repeat center center;
@@ -51,26 +56,19 @@ section {
     background: url(/24.09.01-basic/img/천혜향.jfif) no-repeat center center;
     background-size: cover;
 }
-/* 768픽셀 넘으면 */
 @media screen and (min-width : 768px) {
     section {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    #menu1, #menu2,#menu3, #menu4 {
+    #menu1, #menu2, #menu3, #menu4 {
         width: 49%;
     }
     #menu5 {
         width: 100%;
     }
 }
-footer {
-    background-color: beige;
-    text-align: center;
-    padding: 30px
-}
-/* 960픽셀 넘으면 */
 @media screen and (min-width : 960px) {
     #menu1, #menu2, #menu3, #menu4, #menu5{
         width: 33%;
