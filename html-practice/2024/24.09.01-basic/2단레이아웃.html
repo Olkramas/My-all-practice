@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2단 레이아웃</title>
+    <style>
+        #container {
+            border: 1px;
+            padding: 10px;
+            margin: 0 auto;
+            width: 963px;
+        }
+        header {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        section {
+            border: 1px solid #ccc;
+            width: 620px;
+            padding: 20px;
+            float: left;
+            margin-bottom: 20px;
+        }
+        aside {
+            border: 1px;
+            width: 220px;
+            padding: 20px;
+            float: right;
+            margin: 20px;
+            background-color: #ccc;
+        }
+        footer {
+            border: 1px solid #ccc;
+            clear: both;
+            padding: 10px;
+        }
+        .greenfixel {
+            color: rgb(118, 164, 118);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <p class="greenfixel"> - container : 테두리 1px, 너비90px, 안여백 20px, 화면 중앙에 위치</p>
+            <p class="greenfixel"> - header : 테두리 1px, 안여백 10px, 아래 요사와 간격 20px</p>
+            <h1>사이트 제목</h1>
+        </header>
+        <section>
+            <h3>본문</h3>
+            <p>내용 입력1</p>
+            <p>내용 입력2</p>
+            <p class="greenfixel">테두리 1px. 너비 620px,</p>
+            <p class="greenfixel">안여백 20px, 왼쪽으로 플로팅,</p>
+            <p class="greenfixel">아래요소와 간격 20px</p>
+        </section>
+        <aside>
+            <h3>사이드 바</h3>
+            <p>광고1</p>
+            <p>광고2</p>
+            <p class="greenfixel">테두리 1px, 너비 220px, 안여백 20px, 오른쪽으로 플로팅, 아래요소와 간격 20px, 배경색</p>
+        </aside>
+        <footer>
+            <h3>푸터</h3>
+            <p>저작권 정보, 연락처 등</p>
+            <p class="greenfixel">테두리 1px, 양쪽 플로팅 해제, 안여백 10px</p>
+        </footer>
+    </div>
+</body>
+</html>
