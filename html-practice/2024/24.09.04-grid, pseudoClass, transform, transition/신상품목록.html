@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #container {
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            text-align: center;
+        }
+        ul {
+            width: 100%;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        h1 { 
+            width: 100%;
+        }
+        img {
+            width: 300px;
+            height: 200px;
+        }
+        .prod-list li {
+            width: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        .caption {
+            width: 300px;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 200px;
+            left: 0;
+            opacity: 0;
+            transition: 2s;
+        }
+        .prod-list li:hover .caption{
+            opacity: 1;
+            transform: translateY(-200px);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>신상품 목록</h1>
+        <ul class="prod-list">
+            <li>
+                <img src="/~24.09.01/img/천혜향.jfif" alt="">
+                <div class="caption">
+                    <h2>상품 1</h2>
+                    <p>상품 1 설명텍스트</p>
+                    <p>가격: 12,555원</p>
+                </div>
+            </li>
+            <li>
+                <img src="/~24.09.01/img/천혜향.jfif" alt="">
+                <div class="caption">
+                    <h2>상품 2</h2>
+                    <p>상품 2 설명텍스트</p>
+                    <p>가격: 12,555원</p>
+                </div>
+            </li>
+            <li>
+                <img src="/~24.09.01/img/천혜향.jfif" alt="">
+                <div class="caption">
+                    <h2>상품 3</h2>
+                    <p>상품 3 설명텍스트</p>
+                    <p>가격: 12,555원</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

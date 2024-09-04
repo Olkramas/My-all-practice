@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        .wrapper1 {
+            width: 80%;
+            margin: 0 auto;
+            display: grid;
+            background-color: beige;
+            /* grid-template-columns: 100px 100px 100px; /*세로 행 너비*/ 
+            /* grid-template-rows: 100px 200px; 다 다르게 값을 줄 수 있음*/
+            /* grid-auto-rows: 100px; 행들 크기 똑같이 */
+            /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    fr wrapper사이즈로 꽉채움, minmax 300픽셀 가로 */
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            /*auto-fit or fill 개수가 정확하지 않을때 fit은 남은 크기에 맞춰서 컨텐츠를 키워줌, fill은 여백은 남겨둠 한행에 몇개 넣을건지 적으면 됨. minmax(가로:100px, 새로 1fr) */
+            grid-template-rows: minmax(100px, auto);                        /*글자 안 흘러내리게 세로 크기 키워줌*/
+            gap: 10px;
+        }
+        .wrapper2 {
+            width: 80%;
+            margin: 0 auto;
+            display: grid;
+            background-color: beige;
+            grid-template-columns: repeat(3, minmax(3, 1fr));
+            grid-template-rows: minmax(3, 100px);  
+            gap: 10px;                     
+        }
+        .box {
+            background-color: yellow;
+        }
+        .box.box:nth-child(2n) {
+            background-color: greenyellow;
+        }
+        .box1 {
+            grid-column: 1/4;
+            background-color: blue;
+        }
+        .box2 {
+            grid-column-start: 1;
+            grid-row: 2/4;
+            background-color: green;
+
+        }
+        .box3 {
+            grid-column: 2/4;
+            grid-row-start: 2;
+            background-color: orange;
+        }
+        .box4 {
+            background-color: yellow;
+        }
+        .box5 {
+            background-color: red;
+        }
+        .wrapper3 {
+            width: 80%;
+            margin: 0 auto;
+            display: grid;
+            background-color: beige;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            grid-template-areas: 
+                "box6 box6 box6"
+                "box10 box7 box8"
+                "box10 box7 box9"
+            ;                     
+            gap: 10px;
+        }
+        .box6 {
+            grid-area: box6;
+        }
+        .wrapper3 .box7 {
+            grid-area: box7;
+            background-color: violet;
+        }
+        .wrapper3 .box8 {
+            grid-area: box8;
+        }
+        .wrapper3 .box9 {
+            grid-area: box9;
+        }
+        .wrapper3 .box10 {
+            grid-area : box10;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper1">
+        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, dolorem.</div>
+        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nulla.</div>
+        <div class="box">Lpellat facilis.</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, dolorem.</div>
+        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nulla.</div>
+        <div class="box">Lpellat facilis.</div>
+        <div class="box">4</div>
+        <div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, culpa! Delectus ipsam praesentium perferendis id, minus provident, expedita, asperiores inventore tempora facilis modi placeat officia.</div>
+    </div>
+    <hr>
+    <div class="wrapper2">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+    <hr>
+    <div class="wrapper3">
+        <div class="box box6">6</div>
+        <div class="box box7">7</div>
+        <div class="box box8">8</div>
+        <div class="box box9">9</div>
+        <div class="box box10">10</div>
+    </div>
+
+</body>
+</html>

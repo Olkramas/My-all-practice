@@ -1,0 +1,28 @@
+a:link {
+    text-decoration: none;
+    color: black;
+}
+a:visited {
+    color: red;
+}
+a:hover {
+    background-color: black;
+    color: #fff
+}
+/*a 누르면 글씨, 배경 변경*/
+a:active {
+    background-color: red;
+    color: aqua;
+}
+a { 
+    padding: 10px;
+}
+#dog1:target {
+    background-color: blueviolet;
+}
+#dog2:target {
+    background-color: blueviolet;
+}
+#dog3:target {
+    background-color: blueviolet;
+}

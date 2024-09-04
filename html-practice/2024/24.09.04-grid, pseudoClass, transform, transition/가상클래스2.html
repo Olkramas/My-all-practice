@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+    <style>
+        .container {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+        }
+        .container :first-child {
+            background-color: red;
+        }
+        .container :last-child {
+            background-color: blue;
+        }
+        .container :only-child {
+            background-color: green;
+        }
+        .container p:nth-of-type(2) {           /*p들 중에 둘째*/
+            background-color: pink;
+        }
+        /* .container div:nth-of-type(1) {
+
+        } */
+         .container :nth-child(2n) {
+            background-color: greenyellow;
+         }
+         .container :nth-child(2n+1) {
+            background-color: red;
+         }
+         /*before, after두개 다 넣어보고 실험해보기*/
+         .container p:first-child::after {
+            content: "✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔";
+            color: blue;
+            margin: 0 5px;
+            position: relative;
+            top: -8px;
+            font-weight: bold
+         }
+         ::selection {
+            background-color: #ccc;
+         }
+    </style>
+<body>
+    <div class="container">
+
+        <p>첫번째</p>
+        <div>두번째</div>
+        <p>세번째</p>
+        <div>네번째</div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, at!</div>
+    </div>
+    <div class="container">
+        <div><i class="fa-brands fa-facebook">혼자~</i></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+a:link {
+    text-decoration: none;
+    color: black;
+}
+a:visited {
+    color: red;
+}
+a:hover {
+    background-color: black;
+    color: #fff;
+}
+a:active {
+    background-color: red;
+    color: aqua;
+}
+a {
+    padding: 10px;
+}
+#dog1:target {
+    background-color: aquamarine;
+}
+#dog2:target {
+    background-color: aquamarine;
+}
+#dog3:target {
+    background-color: aquamarine;
+}
+

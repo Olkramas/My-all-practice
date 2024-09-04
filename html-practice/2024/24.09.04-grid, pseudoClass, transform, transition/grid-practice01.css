@@ -1,0 +1,70 @@
+.wrapper1 {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    background-color: beige;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: minmax(100px, auto);
+    gap: 10px;
+    padding: 10px;
+}
+.box {
+    background-color: black;
+    color: white;
+}
+.box.box:nth-child(2n) {
+    background-color: blue;
+}
+.wrapper2 {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    background-color: beige;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-rows: minmax(3, 100px);
+    height: 500px;
+    gap: 10px;
+}
+.box1 {
+    grid-column: 1/4;
+
+}
+.box2 {
+    grid-row-start: 2;
+    grid-row: 2/4;
+}
+.box4 {
+    grid-row-start: 2;
+    grid-column-start: 3;
+    grid-row: 2/4;
+}
+.wrapper3 {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    background-color: beige;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-rows: minmax(3, 100px);
+    height: 500px;
+    gap: 10px;
+    grid-template-areas: 
+        "box6 box6 box6"
+        "box10 box7 box8"
+        "box10 box7 box9"
+    ;
+}
+.box6 {
+    grid-area: box6;
+}
+.box7 {
+    grid-area: box7;
+}
+.box8 {
+    grid-area: box8;
+}
+.box9 {
+    grid-area: box9;
+}
+.box10 {
+    grid-area: box10;
+}

@@ -1,0 +1,30 @@
+.container {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+.container :first-child {
+    background-color: red;
+}
+.container :last-child {
+    background-color: blue;
+}
+.container :only-child {
+    background-color: green;
+}
+.container p:nth-of-type(2) {
+    background-color: pink;
+}
+.container div:nth-child(2n) {
+    background-color: #ccc;
+}
+.container div:nth-child(2n-1) {
+    background-color: aqua;
+}
+.container p:first-child::after {
+    content: "!!!!!!!!!!!!!!!!!!!!!"
+}
+::selection {
+    background-color: rgb(100, 142, 100);
+}

@@ -1,0 +1,33 @@
+#container {
+    width: 80%;
+    margin: 0 auto;
+}
+ul li {
+    float: left;
+    list-style: none;
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 150px;
+}
+img {
+    width: 300px;
+    height: 150px;
+}
+.caption {
+    background-color: rgba(0,0,0,0.3);
+    opacity: 0;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top:200px;
+    z-index: 10;
+}
+ul li:hover .caption {
+    opacity: 1;
+    transform: translateY(-200px);
+    color: #fff;
+    text-align: center;
+    transition: 2s;
+}
