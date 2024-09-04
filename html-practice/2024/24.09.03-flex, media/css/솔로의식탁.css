@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    background-color: beige;
+}
+#container div {
+    height: 300px;
+    margin-bottom: 15px;
+    position: relative;
+}
+#container {
+    width: 90%;
+    margin: 10px auto;
+}
+header {
+    width: 100%;
+    background-color: greenyellow;
+    padding: 10px;
+    text-align: center;
+}
+#container div h3 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    text-shadow: 1px 1px 3px #fff;
+}
+section {
+    width: 100%;
+}
+#menu1 {
+    background: url(/24.09.01-basic/img/천혜향.jfif) no-repeat center center;
+    background-size: cover;
+}
+#menu2 {
+    background: url(/24.09.01-basic/img/천혜향.jfif) no-repeat center center;
+    background-size: cover;
+}
+#menu3 {
+    background: url(/24.09.01-basic/img/천혜향.jfif) no-repeat center center;
+    background-size: cover;
+}
+#menu4 {
+    background: url(/24.09.01-basic/img/천혜향.jfif) no-repeat center center;
+    background-size: cover;
+}
+#menu5 {
+    background: url(/24.09.01-basic/img/천혜향.jfif) no-repeat center center;
+    background-size: cover;
+}
+/* 768픽셀 넘으면 */
+@media screen and (min-width : 768px) {
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #menu1, #menu2,#menu3, #menu4 {
+        width: 49%;
+    }
+    #menu5 {
+        width: 100%;
+    }
+}
+footer {
+    background-color: beige;
+    text-align: center;
+    padding: 30px
+}
+/* 960픽셀 넘으면 */
+@media screen and (min-width : 960px) {
+    #menu1, #menu2, #menu3, #menu4, #menu5{
+        width: 33%;
+    }
+    #menu5 {
+        margin-left: 0.5%;
+        /* flex-grow: 1; */
+        flex: 2 2 0;
+    }
+}
