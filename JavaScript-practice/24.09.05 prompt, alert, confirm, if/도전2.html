@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도전~!</title>
+</head>
+<body>
+    <h1>도전~</h1>
+    <script>
+            //수를 입력받아서 홀짝 구별하기
+            //순서 : 수 입력 - 홀짝 구별
+            //입력이 취소되면 입력 취소 출력
+        // let num1 = prompt("수를 입력하시오");
+        // if(num1 == null) {
+        //     confirm("입력이 취소되었습니다.")
+        // } else if(Number(num1) % 2 == 0) {
+        //     confirm("짝수입니다.")
+        // } else {
+        //     confirm("홀수입니다.")
+        // }
+
+        //점수 3개 입력 총점, 평균, 등급을 출력
+        let score1 = Number(prompt("국어점수를 입력하시오"));
+        let score2 = Number(prompt("수학점수를 입력하시오"));
+        let score3 = Number(prompt("영어점수를 입력하시오"));
+        let result = (score1 + score2 + score3);
+        let avg = result/3;
+        let grade = "";
+
+        if(avg >= 90) {
+            grade = "수";
+        } else if(avg >= 80) {
+            grade = "우";
+        } else if(avg >= 70) {
+            grade = "미";
+        } else if(avg >= 60) {
+            grade = "양";
+        } else {
+            grade = "가";
+        }
+        console.log("총점: " + result + " | 평균: " + avg + " | 등급: " + grade);
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <h1>조건문</h1>
+    <script>
+        /* 제어문: 조건문 반복문 
+            1. 조건문
+            if문
+            */
+        let su1 = -10;
+        if(su1 > 0) {
+            console.log(su1 + "는 양수입니다.");
+        } else {
+            if(su1 == 0) {
+                console.log(su1 + "는 zero입니다.")
+            } else {
+                console.log(`${su1}는 음수입니다."`);
+            }
+            
+        }
+        console.log("end");
+
+
+        // //su가 짝수면 짝수라고 출력, 홀수면 홀수라고 출력
+        let su2 = 0;
+        if(su2%2 == 0) {
+            console.log(su2 + "은 짝수입니다.");
+        } else {
+            if(su2%2 == 1) {
+                console.log(su2 + "은 홀수입니다");
+            } 
+        }
+
+        //su가 7의 배수인지 확인. 7의 배수면 7의 배수 출력
+        let num1 = 15;
+        if(num1 % 7 == 0) {
+            console.log(num1 + "은 7의 배수입니다.");
+        } else {
+            if(num1 % 7 == 1) {
+                console.log(num1 + "은 7의 배수가 아닙니다.");
+            }
+        }
+
+        //su가 3의 배수이면서 7의 배수이면 3,7배수라고 출력
+        if(num1 % 7 == 0 && num1 % 3 == 0) {
+            console.log(num1 + "은 3, 7의 배수입니다.");
+        } else {
+            console.log(num1 + "은 3, 7의 배수가 아닙니다.");
+        }
+
+        // 점수의 등급을 배기기!
+        //평균 >= 90 - 수 -------- 평균 <60 - 가
+
+        let avg = 95;
+        let grade = ""; //등급 저장변수
+
+        if(avg >= 90) {
+            grade = "수";
+        } else if(avg >= 80) {
+                grade = "우"
+        } else if(avg >= 70) {
+                grade = "미"
+        } else if(avg >= 60) {
+            grade = "양"
+        } else {
+            grade = "가"
+        }
+        
+        console.log("평균: " + avg + "점.\"" + grade + "\" 등급입니다.")
+        
+
+    </script>
+        
+
+
+</body>
+</html>
