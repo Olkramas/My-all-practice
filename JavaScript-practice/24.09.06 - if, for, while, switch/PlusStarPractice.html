@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>별 붙이기!</h1>
+    <script>
+        //별 붙이기
+        let stars = "";
+        
+        for(let i=1; i<=5; i++) {
+            stars += "*";
+            console.log(stars);
+        }
+            
+
+        //별 줄이기
+        
+        stars = "";
+        for(let i=1; i<=5; i++) {
+            for(let j=5; j>=i; j--) {
+                stars += "*";
+            }
+            console.log(stars);
+            stars = "";
+        }
+    
+
+        //공백 별 늘리기
+
+        stars = "";
+        let blank = "";
+
+
+        for(let i=1; i<=5; i++) {
+            stars += "*";
+            for(let b=4; b>=i; b--) {
+                blank += " ";
+            }
+            console.log(blank+stars);
+            blank = "";
+        }
+
+        console.log("=====================")
+
+        //공백 별 늘리기 한줄에
+        let result = "";
+        blank = "";
+        stars = "";
+        result = "";
+
+        for(let i=1; i<=5; i++) {
+            stars += "*";
+            for(let b=4; b>=i; b--) {
+                blank += " ";
+            }
+            result = result + blank + stars + "\n";
+            blank = "";
+        }
+        console.log(result);
+
+        
+    </script>
+</body>
+</html>

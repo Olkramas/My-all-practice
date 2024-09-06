@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>gd</h2>
+
+    <script>
+        //자리배치 -> 몇줄을 만들어야 될까?
+        //입장객 수 = 10명
+        //한 줄에 3명씩 앉음
+        //자리는 몇줄?
+
+        let num1 = 10;
+        let line = 3;
+        let avg = num1 / line;
+        
+        if(num1 % line == 0) {
+            console.log(avg + "줄로 앉으면 됩니다.");
+        }else if(num1 % line == 1) {
+            console.log(parseInt(avg) + 1 + "줄로 앉으면 됩니다.");
+        }
+        
+        
+    </script>
+</body>
+</html>

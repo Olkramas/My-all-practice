@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항연산자</title>
+</head>
+<body>
+    <script>
+        //(조건) ? true : false;
+        let su = 10;
+        let col = 3;
+        let row = parseInt(su / col);
+
+        su % 2 == 0 ? console.log("짝수") : console.log("홀수");
+        su % col == 0 ? row : row++;
+        console.log(row + "줄 입니다.");
+
+        //switch(값)
+        //수를 입력받아서 3으로 나눈 나머지가 0이면 최고, 1이면 우수, 2면 보통
+        su = 10;
+        switch(su % 3) {
+            case 0:
+                console.log("최고");
+                break;
+            case 1:
+                console.log("우수");
+                break;
+            case 2:
+                console.log("보통");
+                break;
+            default:
+                console.log("다시 입력하시오");
+        }
+        //평균점수를 이용해서 등급을 매기기. switch이용
+        
+        let score1 = Number(prompt("국어점수를 입력하시오"));
+        let score2 = Number(prompt("수학점수를 입력하시오"));
+        let score3 = Number(prompt("영어점수를 입력하시오"));
+        let avg = parseInt((score1 + score2 + score3)/3) / 10;
+
+        switch(avg) {
+            case 10: 
+                console.log("\"수\" 등급입니다");
+                break;
+            case 9: 
+                console.log("\"수\" 등급입니다");
+                break;
+            case 8: 
+                console.log("\"우\" 등급입니다");
+                break;
+            case 7: 
+                console.log("\"미\" 등급입니다");
+                break;
+            case 6: 
+                console.log("\"양\" 등급입니다");
+                break;
+            default: 
+                console.log("\"가\"등급입니다");
+        }
+    </script>
+</body>
+</html>

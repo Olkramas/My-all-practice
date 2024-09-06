@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person = 15;
+        let cols = 5;
+        let rows = Math.ceil(person/cols);
+
+
+        for(let i=1; i<=rows; i++) {
+
+            for(let j=1; j<=cols; j++) {
+                document.write("(" + i + "," + j + ")");
+            }
+            document.write("<br>");
+        }
+
+        person = Number(prompt("입장객 수를 입력하시오"));
+        cols = Number(prompt("한줄에 앉을 사람 수를 입력하시오"));
+        rows = Math.ceil(person/cols);
+        seatNum = 0;
+
+        for(let i=1; i<=rows; i++) {
+            for(let j=1; j<=cols; j++) {
+                seatNum++;
+                
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //문제1
+        let userNum = Number(prompt("수를 입력하시오"));
+        let division = userNum % 7;
+
+        switch(division) {
+            case 0:
+                console.log("일요일");
+                break;
+            case 1:
+                console.log("월요일");
+                break;
+            case 2:
+                console.log("화요일");
+                break;
+            case 3:
+                console.log("수요일");
+                break;
+            case 4:
+                console.log("목요일");
+                break;
+            case 5:
+                console.log("금요일");
+                break;
+            case 6:
+                console.log("토요일");
+                break;
+            default:
+                console.log("잘못 입력하셨습니다.");
+        }
+
+        //문제2
+        let age = 18;
+        let userAge = Number(prompt("나이를 입력하시오"));
+
+        (userAge > age) ? alert(userAge + "세 판매가능") : alert(userAge + "세 판매불가");
+
+    </script>
+</body>
+</html>
