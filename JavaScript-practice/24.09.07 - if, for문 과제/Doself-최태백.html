@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do-Self</title>
+    <style>
+        body {
+            width: 800px;
+            margin: 0 auto;
+        }
+        table{
+            margin: 0 auto;
+            border-collapse: separate;
+            border-spacing: 20px;
+        }
+        
+        td {
+            width: 130px;
+            height: 130px;
+            text-align: center;
+            border: 1px solid #ccc;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //1.
+        let sum1 = 0;
+        let sum2 = 0;
+
+        for(let i=1; i<=100; i++) {
+            if(i%2 == 1) {
+                sum1 += i;
+            } else {
+                sum2 += i;
+            }
+        }
+        console.log(`문제1) 1부터 100까지의 홀수합은 ${sum1}, 짝수합은 ${sum2}입니다.`);
+
+        //2.
+        let sum3 = 0;
+
+        for(let i=0; i<=100; i++) {
+            if(i%5 == 0) {
+                sum3 += i;
+            }
+        }
+        console.log(`문제2) 1부터 100까지 5의 배수의 합은${sum3}입니다.`);
+
+        //3.
+        let num1 = Number(prompt("팩토리얼 계산을 위한 수를 입력하시오."));
+        let result1 = num1;
+
+        for(let i=1; i<num1; i++) {
+            result1 = result1 * (num1 - i);    
+        }
+        console.log(`문제3) ${num1}!의 값은 ${result1}입니다.`)
+        
+        //4.
+        console.log(`문제4)`);
+        
+        for(let i=2; i<=9; i++) {
+            console.log(`구구단 ${i}단`);
+            for(let j=1; j<=9; j++) {
+                console.log(`${i}x${j} = ${i*j}`);
+            }
+        }
+        
+        //5.
+        let num2 = prompt("문제5) 4의 배수인지 확인하겠습니다. \n숫자를 입력하세요")
+        
+        if(num2 == null || Number(num2) == NaN) {
+            console.log("")
+        } else if(Number(num2%4) == 0) {
+            console.log(`문제5) 입력하신 숫자는 ${num2}이고, 4의 배수입니다.`);
+        } else {
+            console.log(`문제5) 입력하신 숫자는 ${num2}이고, 4의 배수가 아닙니다`);
+        }
+        
+
+        //6.
+        let num3 = Number(prompt("문제6) 3의 배수를 찾아 드리겠습니다. 숫자를 입력하세요."));
+        let result2 = "";
+        let result3 = parseInt(num3/3);
+
+        for(let i=1; i<=num3; i++) {
+            if(i%3 == 0) {
+                result2 += i;
+            } 
+
+            if(i%3 == 0 && result3 * 3 != i) {
+                result2 += ',';
+            }
+
+        }
+        console.log("문제6) " + result2);
+        console.log(`${num3}까지의 3의 배수 개수: ${result3}`);
+        
+        //7.
+        let person = Number(prompt("입장객 수를 입력하세요."));
+        let cols = Number(prompt("한줄에 앉을 사람 수를 입력하세요"));
+        let rows = Math.ceil(person/cols);
+        let seatNum = 0;
+        let layout = "";
+
+        layout += "<table>";
+        for(let i=1; i<=rows; i++) {
+            layout += "<tr>";
+            for(let j=1; j<=cols; j++) {
+                seatNum++;
+                if(seatNum <= person){
+                    layout += "<td>";
+                    layout += "좌석" + seatNum;
+                    layout += "</td>";
+                }
+            }
+            layout += "</tr>";
+        }
+        layout += "</table>";
+
+        document.write(layout);
+        
+       //8-1.
+       let stars1 = "";
+       let blank1 = "";
+       
+       console.log("문제 8-1)");
+       for(let i=1; i<=5; i++) {
+            stars1 += "*";
+            for(let j=5; j>=i; j--) {
+                blank1 += " ";
+            }
+            console.log(blank1 + stars1);
+            blank1 = "";
+       }
+
+       //8-2.
+       let stars2 = "";
+       let blank2 = "";
+       let result4 = "";
+
+       for(let i=1; i<=5; i++) {
+        stars2 += "*";
+        for(let j=5; j>=i; j--) {
+            blank2 += " ";
+        }
+        result4 = result4 + blank2 + stars2+ "\n";
+        blank2 = "";
+       }
+       console.log("문제8-2)\n" + result4);
+
+       //9.
+       let stars3 = "*";
+       let blank3 = "";
+
+       for(let i=1; i<=5; i++) {
+        for(let j=4; j>=i; j--) {
+            blank3 += " ";
+        }
+        console.log(blank3 + stars3);
+        stars3 += "**";
+        blank3 = "";
+       }
+
+       stars3 = "";
+       blank3 = "";
+       for(let i=0; i<7; i+=2) {
+        blank3 += " ";
+            for(let j=7; j>i; j--) {
+                stars3 += "*";
+            }
+        console.log(blank3 + stars3);
+        stars3 = "";
+       }
+       
+       
+
+    </script>
+</body>
+</html>
