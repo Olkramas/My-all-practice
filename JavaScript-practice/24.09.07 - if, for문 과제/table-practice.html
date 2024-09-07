@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        table {
+            margin: 0 auto;
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+        td {
+            border: 1px solid #ccc;
+            background-color: #eee;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let person = Number(prompt("인원수를 입력하시오"));
+        let cols = Number(prompt("한줄에 몇명을 배치하시겠습니까"));
+        let rows = Math.ceil(person/cols);
+        let seatNum = 0;
+        let layout = "";
+
+        layout += "<table>";
+        console.log(rows);
+        for(let i=1; i<=rows; i++) {
+            layout += "<tr>";
+            for(let j=1; j<=cols; j++) {
+                seatNum++
+                if(seatNum <= person) {
+                    layout += "<td>"+ "좌석" + seatNum + "</td>";
+                }
+            }
+            layout += "</tr>";
+        }
+        layout += "</table>";
+
+        document.write(layout);
+    </script>
+</body>
+</html>
