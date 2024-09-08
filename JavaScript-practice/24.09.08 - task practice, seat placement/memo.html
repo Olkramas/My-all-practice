@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let blank = "";
+        let stars = "";
+        let num = 0;
+
+        for(let i=0; i<=6; i+=2) {
+            num++
+            for(let j=1; j<=7-i; j++) {
+                stars += "*";
+            }
+            
+            for(let b=1; b<=num; b++) {
+                blank += " ";
+            }
+            
+            console.log(blank + stars)
+            stars = "";
+            blank = "";
+
+        }
+
+        
+    </script>
+</body>
+</html>
