@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getUser(name, kor, eng, math) {
+            let sum = kor + eng + math;
+            let avg = parseInt(sum / 3);
+            let val = Math.floor(avg/10);
+            let grade = "";
+
+            switch(val) {
+                case 10:
+                case 9: grade = "A"; break;
+                case 8: grade = "B"; break;
+                case 7: grade = "C"; break;
+                case 6: grade = "D"; break;
+                case 5: grade = "E"; break;
+                default: grade = "F";
+            }
+            console.log(`${name} \t ${sum} \t ${avg} \t ${grade}`);
+        }
+        console.log(`이름 \t 총점 \t 평균 \t 등급`);
+        getUser("aa3", 100, 90, 90);
+        getUser("aa2", 19, 90, 90);
+        getUser("aa1", 10, 90, 90);
+    </script>
+</body>
+</html>

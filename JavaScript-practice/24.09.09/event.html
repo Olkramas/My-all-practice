@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <style>
+        #container {
+            width: 300px;
+            margin: 0 auto;
+        }
+        img {
+            width: 300px;
+        }
+        #desc {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="hd">이벤트</h1>
+        <img src="천혜향.jfif" alt="레드향">
+        <button type="button" id="showBtn" onclick="show()">상세설명 보기</button>
+        <div id="desc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum sint perferendis eos ullam repellendus ut eligendi consequuntur sed aliquam. Nam incidunt aspernatur laborum provident nulla? Debitis eaque blanditiis iste distinctio!</p>
+            <button type="button" id="closeBtn">상세설명 닫기</butto>
+        </div>
+    </div>
+    <script>
+        //웹요소 접근 -> 가져오기
+        let sBtn = document.querySelector("#showBtn");
+        let desc = document.querySelector("#desc");
+        let cBtn = document.querySelector("#closeBtn");
+        let hd = document.querySelector("#hd");
+
+        //이벤트 연결
+        sBtn.onclick = show;
+
+        function show() {
+            desc.style.display = "block";
+            sBtn.style.display = "none";
+        }
+
+        cBtn.onclick = hide;
+
+        function hide() {
+            desc.style.display = "none";
+            sBtn.style.display = "block";
+            
+        }
+        hd.onclick = function() {
+            hd.style.color = "red";
+        }
+    </script>
+</body>
+</html>

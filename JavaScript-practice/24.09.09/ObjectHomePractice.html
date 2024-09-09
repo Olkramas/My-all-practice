@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person = {
+            name : "hong",
+            age : 25,
+            arr : [1,2,3,4],
+            eat : function() {
+                console.log(`내 이름은 ${this.name}, 나이는 ${this.age}입니다.`);
+            }
+        }
+        console.log(person.name);
+        console.log(person.age);
+        person.eat();
+
+        person.job = "programmer";      //객체에 속성추가
+        console.log(person.job);
+
+        person.print = function() {
+            for(let key in person) {
+                console.log(key + " : " + person[key]);
+            }
+            console.log(`내 직업은 ${this.job}입니다`);
+        }
+        person.print();
+        
+        //속성, 메소드 삭제
+        delete person.arr;
+        //console.log(arr);
+        function Product(pName, weight, price) {
+            this.pName = pName;
+            this.weight = weight;
+            this.price = price;
+        }
+
+        Product.prototype.calc = function(w) {
+            return w / this.weight * this.price;
+        }
+
+        //객체 생성
+        let sam = new Product("삼겹살", 100, 5000);
+        console.log(sam.pName);
+        console.log(sam.calc(1000));
+
+        let beaf = new Product("차돌박이", 100, 6000);
+        console.log(beaf.pName);
+        console.log(beaf.calc(400));
+    </script>
+</body>
+</html>

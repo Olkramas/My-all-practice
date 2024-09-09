@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 300px;
+            margin: 0 auto;
+        }
+        img {
+            width: 300px;
+        }
+        #desc {
+            display: none;
+        }
+        #closeBtn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="firstH1">이벤트</h1>
+        <img src="천혜향.jfif" alt="">
+        <button type="button" id="showBtn">상세설명 보기</button>
+        <button type="button" id="closeBtn">상세설명 닫기</button>
+        <div id="desc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo optio consequatur, dolorum et suscipit tempora facere obcaecati fugiat inventore perferendis culpa iste illo natus rem fugit eveniet a aspernatur earum!</p>
+        </div>
+    </div>
+    <script>
+        //웹의 요소에 먼저 접근해야됨.
+        let sBtn = document.querySelector("#showBtn");
+        let desc = document.querySelector("#desc");
+        let cBtn = document.querySelector("#closeBtn");
+        let hd = document.querySelector("first_h1");
+
+        sBtn.onclick = show;
+
+        function show() {
+            desc.style.display = "block";
+            closeBtn.style.display = "block";
+            showBtn.style.display = "none";
+        }
+
+        cBtn.onclick = hide;
+        
+        function hide() {
+            desc.style.display = "none";
+            showBtn.style.display = "block";
+            closeBtn.style.display = "none";
+        }
+
+        //바로 함수 지정도 가능
+        firstH1.onclick = function() {
+            firsth1.style.color = "red";
+        }
+    </script>
+</body>
+</html>

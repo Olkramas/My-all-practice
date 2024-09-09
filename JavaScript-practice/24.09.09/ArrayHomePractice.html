@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let colors = ["빨강", "주황", "노랑", "초록"];
+        let seasons = ["봄", "여름", "가을", "겨울"];
+
+        console.log(colors);
+        console.log(colors[0]);
+        console.log(colors.length);
+
+        for(let i=0; i<colors.length; i++) {
+            console.log(colors[i]);
+        }
+        for(let i=colors.length; i>=0; i--) {
+            console.log(colors[i]);
+        }
+
+        for(let idx in colors) {
+            console.log(idx + " : " + colors[idx]);
+        }
+        for(let ele of colors) {
+            console.log(ele);
+        }
+
+        let concat = seasons.concat(colors);
+        console.log(concat);
+        console.log(colors);
+        console.log(seasons);
+
+        console.log(colors.join(" : "));        //가로로 배열 값들 출력
+        console.log(colors.reverse());
+        console.log(colors);                    //원본 배열 자체가 바뀜
+        console.log(colors.reverse);
+
+        colors.push("파랑");
+        colors.pop();
+        console.log(colors);
+
+        colors.unshift("흰색");
+        colors.shift();
+        console.log(colors);
+
+        colors.splice(2, 2, "검정", "보라");
+        console.log(colors);
+        colors.splice(3, 0, "은색");
+        console.log(colors);
+
+        let myColor = colors.slice(1,3);
+        console.log(myColor);
+
+        console.log(colors);
+        if(colors.indexOf("금색") == -1) {
+            colors.push("금색");
+        } else {
+            console.log("이미 입력된 색 입니다.");
+        }
+        console.log(colors);
+
+        colors.forEach(function(ele, idx) { //값, 키
+            console.log(idx + " : " + ele);
+        })
+
+        let nums = [10, 20, 30, 40, 50];
+        let newArr = nums.map((ele => ele*ele));    //배열의 값을 수정해서 새로운 배열 생성
+        console.log(newArr);
+
+        let newfilter = nums.filter(ele => ele >= 30);//30이상의 배열 값을 가져와서 새로운 배열을 만듦.
+        console.log(newfilter);
+
+        let arrSum = nums.reduce((a,b) => a+b);
+        console.log(arrSum);
+
+        console.log(colors.sort());
+        console.log(colors.reverse());
+
+        console.log(nums.sort((a,b) => a-b));
+        console.log(nums.reverse((a,b) => b-a));
+    </script>
+</body>
+</html>

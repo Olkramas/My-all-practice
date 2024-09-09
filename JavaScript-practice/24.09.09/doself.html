@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수문제</title>
+</head>
+<body>
+    <h1 id="hd">도전 함수문제</h1>
+    <script>
+        let hd = document.getElementById("hd");
+        hd.onclick = gongji;                    //이벤트에 이벤트 처리기(핸들러)연결
+        function gongji() {
+            alert('h1 클릭됨.');
+        }
+        
+        //min~max까지 합구하기
+        //함수선언.
+        //함수 실행
+        
+        // function sum(min, max) {
+        //     let sum = 0;
+        //     for(let i=min; i<=max; i++) {
+        //         sum += i;
+        //     }
+        //     return sum;
+        // }
+        // console.log("합은: " + sum(1, 100));
+        // console.log("합은: " + sum(100, 1000));
+
+        // function name1(name) {
+        //     console.log(name);
+        // }
+        // function sum(subject1, subject2, subject3) {
+        //     let sum = 0;
+        //     sum = subject1 + subject2 + subject3;
+        //     return sum;
+        // }
+        // function avg() {
+        //     avg = Math.round(sum/3);
+        //     console.log(avg);
+        // }
+        // function grade() {
+        //     grade = "";
+        //     if(avg() >= 90) {
+        //         grade = "a";
+        //     } else if(avg() >= 80) {
+        //         grade = "b";
+        //     } else if(avg() >= 70) {
+        //         grade = "c";
+        //     } else {
+        //         grade = "d";
+        //     }
+        //     return grade;
+        // }
+
+        // function sungjuk(name, subject1, subject2, subject3) {
+        //     let name1 = name();
+        //     let sum = sum();
+        //     let avg = avg();
+        //     let grade = grade();
+
+        //     let result = name1 + sum + avg + grade;
+        //     return result;
+        // }
+  
+        function sungjuk1(name, subject1, subject2, subject3) {
+
+            let sum = subject1 + subject2 + subject3;
+            let avg = Math.round(sum/3);
+            let grade = "";
+            if(avg >= 90) {
+                grade = "a";
+            } else if(avg >= 80) {
+                grade = "b";
+            } else if(avg >= 70) {
+                grade = "c";
+            } else {
+                grade = "d";
+            }
+            console.log(`${name}\t${sum}\t${avg}\t${grade}`);
+            
+        }
+        sungjuk1("ccc",80, 80, 80);
+        sungjuk1("ccc1",80, 80, 80);
+
+        //교수님 수업자료
+        // function sungjuk(name, kor, eng, math) {
+        //     //총점구하기
+        //     let sum = kor + eng + math;
+        //     //평균구하기
+        //     let avg = Math.round(sum /3);
+        //     //등급 구하기
+        //     let val = Math.floor(avg / 10);
+        //     let grade = "";
+        //     switch(val) {
+        //         case 10 :
+        //         case 9 : grade = 'A'; break;
+        //         case 8 : grade = 'B'; break;
+        //         case 7 : grade = 'C'; break;
+        //         case 6 : grade = 'D'; break;
+        //         default : grade = 'F';
+        //     }
+            
+        //     console.log(`${name} \t ${sum} \t ${avg} \t ${grade}`)
+        // }
+        // //출력하기
+
+        // sungjuk("aaa", 90, 90, 90);
+        // sungjuk("aaa", 90, 90, 90);
+        // sungjuk("aaa", 90, 90, 90);
+        // sungjuk("aaa", 90, 90, 90);
+
+    </script>
+</body>
+</html>

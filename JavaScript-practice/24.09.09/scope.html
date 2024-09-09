@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 1;
+        var b = 5;
+
+        function outfunc() {
+            function innerfunc() {
+                a=b;
+            }
+        console.log("a1: " + a);
+
+        a = 3;
+        b = 4;
+        innerfunc();
+        console.log("2: " + a);
+        var b=2; console.log(b);
+        }
+        outfunc(); console.log(b);
+        //var은 전역 변수지만, 함수안에서 선언될 때는 지역변수
+    </script>
+</body>
+</html>

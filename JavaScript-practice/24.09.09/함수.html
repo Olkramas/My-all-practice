@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <script>
+        //함수 : 기능을 수행하는 명령집합(미리 만들어 놓은 수식)
+        var a = 1;
+        let sum = 0;
+        let n = 50;
+
+        for(let i=1; i<=n; i++) {
+            sum += i;
+        }
+        console.log("합 : " + sum);
+
+        //1에서 n까지 합을 구하는 함수를 만드세용
+        //함수 선언
+        function sum1(min, max) {
+            let sum2 = 0;                    //이 함수안에서만 사용할 수 있는 변수 sum2, 콘솔로 출력하면 오류남. 밖에서는 정의가 안돼있음. 
+            for(let i=min; i<=max; i++) {
+                sum2 += i;
+            }
+            return sum2;                     //호출한 곳으로 값을 전달함. 전달할 필요가 없으면 안써도 됨.
+        }
+        //함수를 호출해야 사용할 수 있음. 실행을 한다는 의미.
+        console.log(sum1(1, 10));
+        console.log(sum1(200, 300, 500));   //500은 그냥 무시함.
+        console.log(sum1());                //둘다 값이 없어서 계산이 안되는 모습.
+        // consele.log(sum1)                   //호출하지 않고 함수이름을 출력할 때 = 함수 자체가 출력되는 모습.
+        // console.log(sum2());
+
+        //익명함수 선언 이름이 없음.
+        //console.log(plus(10, 20));          // 무조건 익명함수는 선언을 한 후에 사용해야됨.
+        let plus = function(num1, num2) {
+            return num1 + num2;
+        }
+        console.log(plus(10, 20));
+        
+        //자기 호출 함수(즉시 실행 함수).
+        // 클로져 : 자유변수를 가지고 리턴되는 함수 라고 하거나. 자유변수가 저장되는 공간을 의미.
+        // 클로져 : 사용 목적은 변수 보호. 외부에서 변경할 수 없도록 하기 위해서. 선언된 환경이 사라진 변수를 사용하기 위해서.
+        let count = function()  {
+            let c = 0;
+            return function() {
+                //return c++;                     //return이 실행하고 c++가 그다음 실행됨
+                return ++c;                       //다른 명령어와 함께 있으면 c++은 명령어 수행 후 실행됨. return전에 실행하고 싶으면 ++c
+            }
+        }();
+        //1. 이 함수는 정의되자마자 실행됨.
+        //2. 지역변수 c를 초기화함.
+        //3. 그후 fountion(){return ++c;}라는 함수를 리턴함. 이 반환된 함수가 클로져.
+        let result = count();
+        console.log(result);
+
+        let result2 = count();  
+        console.log(result2);                 //결과는 1. 하나씩 증가되는게 아님.
+
+        console.log("==========");
+        console.log(count());
+        console.log(count());
+        console.log(count());
+        console.log(count());
+
+        //증감연산자 위치
+        let cnt = 0;
+        console.log(cnt++);                 //동작이 실행된 후에 cnt가 ++됨.
+        console.log(cnt);
+        cnt = 0;
+        console.log(++cnt);                 //cnt가 console.log보다 먼저 실행됨.
+        
+        //콜백함수: 다른함수에 매개값으로 전달되는 함수. 일의 순서가 반드시 지켜져야할 때.
+        function done(coffee) {
+            console.log(coffee + "준비완료");
+        }
+        function order(coffee, callback) {
+            console.log(coffee + "주문접수");
+            setTimeout(() => {callback(coffee);}, 3000); //화살표함수 예시, setTimeout-지연시간을 나타내는 함수
+        }
+
+        order("아아", done);
+        order("라떼", done);
+        order("망고주스", done);
+
+        //펼침 연산자: 변수명 앞에다가 '...'을 붙이면 됨.
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        hap(...arr); //배열의 값을 풀어서 전달.
+
+        function hap(x, y, z,...nums) {    //남은값을 모두 배열타입으로 저장함.
+            let sum = 0;
+            sum = x + y + z;
+            console.log("1차 합계: " + sum);
+            for(let i=0; i<nums.length; i++) {
+                sum += nums[i];
+            }
+            console.log("합계는 " + sum);
+        }
+    </script>
+</body>
+</html>

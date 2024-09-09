@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //자기 호출 함수(즉시 실행 함수).
+        // 클로져 : 자유변수를 가지고 리턴되는 함수 라고 하거나. 자유변수가 저장되는 공간을 의미.
+        // 클로져 : 사용 목적은 변수 보호. 외부에서 변경할 수 없도록 하기 위해서. 선언된 환경이 사라진 변수를 사용하기 위해서.
+        let count = function()  {
+            let c = 0;
+            return function() {
+                //return c++;                     //return이 실행하고 c++가 그다음 실행됨
+                return ++c;                       //다른 명령어와 함께 있으면 c++은 명령어 수행 후 실행됨. return전에 실행하고 싶으면 ++c
+            }
+        }();
+        //1. 이 함수는 정의되자마자 실행됨.
+        //2. 지역변수 c를 초기화함.
+        //3. 그후 fountion(){return ++c;}라는 함수를 리턴함. 이 반환된 함수가 클로져.
+        // let result = count();
+        // console.log(result);
+
+        // let result2 = count();  
+        // console.log(result2);                 //결과는 1. 하나씩 증가되는게 아님.
+
+        console.log("==========");
+        console.log(count());
+        console.log(count());
+        console.log(count());
+        console.log(count());
+
+    </script>
+</body>
+</html>

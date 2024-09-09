@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적</title>
+</head>
+<body>
+    <script>
+        function GetUser(name, kor, eng, math) {
+            this.name = name,
+            this.kor = kor,
+            this.eng = eng,
+            this.math = math
+        }
+        GetUser.prototype.getSum = function() {
+            let sum = this.kor + this.eng + this.math;
+            return sum;
+        }
+
+        GetUser.prototype.getAvg = function() {
+            let avg = Math.round(this.getSum() / 3);
+            return avg;
+        }
+
+        GetUser.prototype.getGrade = function() {
+            let val = Math.floor(this.getAvg() / 10);
+            let grade = "";
+
+            switch(val) {
+                case 10:
+                case 9: grade = "A"; break;
+                case 8: grade = "B"; break;
+                case 7: grade = "C"; break;
+                case 6: grade = "D"; break;
+                case 5: grade = "E"; break;
+                default: grade = "F";
+            }
+            return grade;
+        }
+
+        GetUser.prototype.print = function() {
+            console.log(`${this.name} \t ${this.getSum()} \t  ${this.getAvg()} \t  ${this.getGrade()}`);
+        }
+
+        //배열에 데이터를 저장
+        let students = [
+            new GetUser("aa1", 100, 90, 90),
+            new GetUser("aa2", 19, 90, 90),
+            new GetUser("aa3", 10, 90, 90),
+            new GetUser("aa4", 10, 90, 90),
+            new GetUser("aa5", 10, 90, 90)
+        ]
+        console.log(students);
+        console.log(`이름 \t 총점 \t 평균 \t 등급`);
+        for(let ele of students) {
+            ele.print();
+        }
+    </script>
+</body>
+</html>

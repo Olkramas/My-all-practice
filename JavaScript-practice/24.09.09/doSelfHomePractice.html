@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function YourGrade(name, kor, eng, math){
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+        }
+        YourGrade.prototype.getSum = function() {
+            let sum = this.kor + this.eng + this.math;
+            return sum;
+        }
+
+        YourGrade.prototype.getAvg = function() {
+            let avg = parseInt(this.getSum()/3);
+            return avg;
+        }
+
+        YourGrade.prototype.getGrade = function() {
+            let val = Math.floor(this.getAvg()/10);
+            let grade = "";
+            switch(val) {
+                case 10:
+                case 9: grade = "A"; break;
+                case 8: grade = "B"; break;
+                case 7: grade = "C"; break;
+                case 6: grade = "D"; break;
+                case 5: grade = "E"; break;
+                default : grade = "F";
+            }
+            return grade;
+        }
+        YourGrade.prototype.print = function() {
+            console.log(`${this.name} \t ${this.getSum()} \t ${this.getAvg()} \t ${this.getGrade()}`);
+        }
+
+        let students = [
+            new YourGrade("aa1", 100, 90, 90),
+            new YourGrade("aa2", 19, 90, 90),
+            new YourGrade("aa3", 10, 90, 90),
+            new YourGrade("aa4", 10, 90, 90),
+            new YourGrade("aa5", 10, 90, 90)
+        ]
+        //students = 객체의 배열
+        //배열의 각 요소에.print를 하는것 그래서 결과가 출력됨.
+
+        for(let student of students) {
+            student.print(); // 학생 정보 출력
+        }
+    </script>
+</body>
+</html>
