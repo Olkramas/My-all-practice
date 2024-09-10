@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="parent">부모이벤트
+        <p id="child">자식이벤트</p>
+    </h1>
+    <script>
+        let pr = document.querySelector("#parent");
+        let ch = document.querySelector("#child");
+
+        pr.addEventListener("click", parFunc);
+        ch.addEventListener("click", chFunc);
+
+        function parFunc() {
+            alert("부모이벤트 발생");
+        }
+        function chFunc() {
+            alert("자식이벤트 발생");
+            event.stopPropagation();
+        }
+
+
+    </script>
+</body>
+</html>

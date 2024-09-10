@@ -30,7 +30,7 @@
         }
         function chFunc() {
             alert("자식이벤트 발생");
-            event.stopPropagation();
+            event.stopPropagation();                            //자식태그 눌렀는데, 부모태그 같이 이벤트 발생하는 경우 = 버블링, 이걸로 해결가능
         }
 
         //태그생성
