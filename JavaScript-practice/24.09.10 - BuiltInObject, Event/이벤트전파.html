@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 전파</title>
+    <style>
+        .accent{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="parent">부모이벤트
+        <p id="child">자식이벤트</p>
+    </h1>
+    <script>
+        //웹 요소 가져오기
+        let pr = document.querySelector("#parent");
+        let ch = document.querySelector("#child");
+
+        //웹요소에 이벤트를 더하기
+        pr.addEventListener("click", parFunc);
+        ch.addEventListener("click", chFunc);
+
+        //이벤트 핸들러
+        function parFunc() {
+            alert("부모이벤트 발생");
+        }
+        function chFunc() {
+            alert("자식이벤트 발생");
+            event.stopPropagation();
+        }
+
+        //태그생성
+        let newP = document.createElement("p");                 //p태그 만들기
+        let newText = document.createTextNode("안녕하세요");    //텍스트 생성
+        newP.appendChild(newText);                              //newP안에 newText가 들어갔음(부모자식 관계를 연결해 줌)
+        document.body.appendChild(newP);                        //이제 바디에 들어감(태그를 바디에 연결해 줌)
+        newP.setAttribute("class", "accent")                    //(태그에 속성 지정)클래스 넣기, ()"클래스", "클래스이름")
+
+
+
+    </script>
+</body>
+</html>

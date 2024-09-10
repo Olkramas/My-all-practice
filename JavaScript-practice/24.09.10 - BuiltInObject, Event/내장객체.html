@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuiltInObject</title>
+</head>
+<body>
+    <h1>내장객체</h1>
+    <script>
+        //내장객체: 미리 정의되어진 객체.
+
+        //날짜와 시간
+        let today = new Date();
+        let xmas = new Date(2024,11,25);    //월은 0부터 11까지. 1월이 0임.
+        xmas = new Date("2024-12-25");      //""안에 넣으면 월도 숫자 그대로임.
+        console.log(today);
+        console.log(xmas);
+
+        let year = today.getFullYear();
+        let month = today.getMonth() + 1;   //Month()메소드는 0부터 시작함. 1월이 0임.
+        let date = today.getDate();
+        let week = today.getDay();          //0이 일요일
+        let day = "";
+
+        switch(week) {
+            case 0: day = "일"; break;
+            case 1: day = "월"; break;
+            case 2: day = "화"; break;
+            case 3: day = "수"; break;
+            case 4: day = "목"; break;
+            case 5: day = "금"; break;
+            case 6: day = "토"; break;
+        }
+        console.log(year + "년 " + month + "월 " + date + "일 " + day + "요일");
+        //날짜 계산을 위한 기준 시간을 : 1970년 1월 1일 0시 0분 1/1000초
+        console.log(new Date(1));
+        console.log(new Date(1725928644169));
+        console.log(new Date(2000,1,29));
+        console.log(today.getTime());
+
+        console.log(today.toLocaleString());    //우리나라에서 쓰는 날짜 표시 방식.
+        console.log(today.toLocaleDateString());//우리나라 표현방식으로 년 월 일만 나타남.
+
+        //크리스마스까지 몇일 남았을까?
+        let remain = xmas - today;
+        remain = Math.floor(remain / (1000*60*60*24));
+        console.log(remain + "일 남았어용");
+
+        // 예담에 온지 몇일째인가?
+        let startDay = new Date("2024-8-21");
+        let result = today - startDay
+        result = Math.floor(result / (1000*60*60*24));  //Math.ceil하면 몇일'째'인지 확인가능.
+        console.log(result + "일 되었어요");
+
+        //수학객체 : 수학메소드, 객체를 생성하지 않음.
+        let ranNum = Math.random();
+        ranNum = Math.floor(ranNum * 45) + 1;// *최종값 +최솟값  = 최솟값 <= x < 최종값 //1부터 시작할 때.
+        //1부터 시작하는 경우가 아닐경우 Math.random() * (최대값 - 최소값 + 1) + 최소값
+        console.log(ranNum);
+
+        //주사위 눈 발생
+        let dice = Math.floor(Math.random() * 6) + 1;
+        console.log(dice + "번 나옴");
+
+        //로또번호 발생
+        
+        for(let i=1; i<=5; i++) {
+            let lotto = [];
+            for(let j=1; j<=6; j++) {
+                let ranNum = Math.floor(Math.random()*45) + 1;
+                if(lotto.indexOf(lotto) == -1) {
+                    lotto.push(ranNum);
+                } else {
+                    j--;
+                }
+            }
+            console.log(lotto.join("\t\t"));
+        }
+
+    </script>
+</body>
+</html>
