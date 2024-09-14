@@ -1,36 +1,76 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>좌석배치도</title>
-    <style>
-        table{
-            /* border: 1px solid #ccc; */
-            border-collapse: collapse;
-            empty-cells: hide;
-            margin-top: 30px;
-
-        }
-        td{
-            border: 1px solid #ccc;
-            padding: 5px;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>표만들기</title>
+  <style>
+    #container{
+      width: 600px;
+      margin: 0 auto;
+    }
+    form {
+      margin-bottom:30px;
+    }
+    input[type="text"] {
+      width:30px;
+      height:20px;
+      text-align: center;
+    }
+    button {
+      margin-left:10px;
+    }
+    table {
+      width:500px;      
+      border-collapse: collapse;
+    }
+    td {
+      border:1px solid #ccc;
+      padding:10px;
+    }
+  
+  </style>
 </head>
 <body>
-    <h1>좌석배치도</h1>
-    <form name="output">
-        <label for="person">입장객 수</label>
-        <input type="text" id="person" name="person" size="5">
-        <label for="colNum">1줄 자릿 수</label>
-        <input type="text" id="colNum" name="colNum" size="5">
-        <button type="button" id="btn">배치도</button>
+  <div id="container">
+    <form name="layout">
+      <input type="text" id="rCount" value="1">행 
+      <input type="text" id="cCount" value="1">열    
+      <button type="button" id="btn">작성</button>
     </form>
-    <div id="layout"></div>
+    <div id="contents"></div>
+  </div>
 
-    <script>
-        
-    </script>
+  <script>
+    //웹 요소 접근하기
+    //form의 자식태그의 첫번째input, 두번째input을 선택해서 가져왔음.
+    let rowVal = document.querySelector("form input:nth-of-type(1)");
+    let colVal = document.querySelector("form input:nth-of-type(2)");
+    //표를 담을 요소에 접근하기
+    let showTable = document.querySelector("#contents");
+    //작동할 버튼 접근하기
+    let resultBtn = document.querySelector("#btn");
+
+    //버튼 이벤트를 함수와 연결하기
+    resultBtn.onclick = resultFunc;
+
+    //버튼을 누르면 rowVal이랑 colVal의 값을 이용해서 for문을 통해 수를 만들고 layout안에 넣어서 표를 완성. 그 후 innerHTML안에 넣어서 출력되게 하기
+    function resultFunc() {
+
+      let layout = "";
+
+      layout += "<table>";
+      for(let i=1; i<=rowVal.value; i++) {
+        layout += "<tr>";
+        for(let j=1; j<=colVal.value; j++) {
+          layout += "<td>" + i + ", " + j + "</td>";
+        }
+        layout += "</tr>";
+      }
+      layout += "</table>";
+
+      showTable.innerHTML = layout;
+    }
+  </script>
 </body>
 </html>
