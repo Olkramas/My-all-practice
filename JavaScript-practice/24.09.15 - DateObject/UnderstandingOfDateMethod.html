@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let today = new Date();
+        let xmas = new Date("2024-12-25");
+
+        today = today.setDate(today.getDate() + 1);
+        console.log(today);
+        //setDate는 date객체를 수정하는 메소드.
+        //현재 console.log로 today를 출력했을 때 숫자로 길게~ 밀리초 단위의 타임스템프 형식의 숫자가 나오게 됨.
+        //그 이유는 setDate는 Date객체를 수정하는 메소드이기 때문에 그 값이 변수에 저장됐기 때문에 날짜 형태가 아닌 숫자형태로 저장되게 되는것.
+        //그렇기 때문에 날짜 형태로 출력하기 위해서는 변수에 저장하면 안됨.
+
+        let today1 = new Date();
+
+        today1.setDate(today1.getDate() + 1);
+        //날짜만 수정돼서 출력되는 모습을 볼 수 있음.
+        console.log(today1);
+        
+        //현지 날짜 형태로 바꾸는데, 이는 앞으로 출력할 때도 형태를 현지날짜 형태로 영구적으로 하는것이 아님. 이렇게 출력문에 넣어서 해야 원하는대로 나옴.
+        console.log(today1.toLocaleDateString());
+
+
+        console.log("=============================");
+
+        let today2 = new Date();
+        console.log(today2.getDate());
+        //getDate는 객체의 날짜를 가져옴. 여기에 + N을 하면 반영되는 모습.
+        //그러나 +를 했을때 몇일날짜를 가져와서 연산을 하는거라 날짜 데이터랑은 상관없어지게 됨.
+        console.log(today2.getDate()+100);
+
+        //exam) 100일뒤 몇월 몇일인가?
+        let today3 = new Date();
+        today3.setDate(today3.getDate() + 100);
+        
+    </script>
+</body>
+</html>
+
