@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let today = new Date();
+        let anniversary = new Date("2023-1-1");
+
+        //오늘이 기념일로 부터 몇일인가
+        let result = Math.ceil((today - anniversary) / (1000 * 60 * 60 * 24));
+        console.log(result + "일 째 입니다.");
+
+        //100일, 200일, 365일 구하기 콘솔에 몇일인지 나오게 하기
+        function addDays(days, original) {
+            let dayAfter = new Date(original);
+            dayAfter.setDate(dayAfter.getDate() + days);
+            return dayAfter.toLocaleDateString();
+        }
+        
+        console.log(addDays(100, anniversary));
+        console.log(addDays(200, anniversary));
+        console.log(addDays(365, anniversary));
+
+
+    </script>
+</body>
+</html>
