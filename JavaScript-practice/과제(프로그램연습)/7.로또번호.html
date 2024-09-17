@@ -36,6 +36,35 @@
         선택 개수: 총 6개의 숫자를 선택합니다.
         중복 불가: 같은 번호를 중복해서 선택할 수 없습니다.
        */
+
+       //웹요소 접근
+       let btn = document.querySelector("#btn");
+       let lotto = document.querySelector("#lotto");
+
+
+       //이벤트 설정
+       btn.onclick = btnFunc;
+
+
+        //이벤트와 연결할 함수 설정
+        function btnFunc() {
+            //로또 숫자를 저장할 배열 선언
+            let lottoArr = [];
+
+            // 랜덤으로 1~45까지 숫자 6개를 배열에 저장하는 for문 작성
+            for(let i=1; i<=6; i++) {
+
+                //if문으로 배열에 숫자가 중복되지 않게 작성함.
+                if(lottoArr.indexOf() == -1) {
+                    lottoArr.push(parseInt(Math.random() * 45) + 1);
+                } else { 
+                    i--;
+                }
+
+            }
+            //웹에 내용을 넣기 위해 연결. join(" ")으로 배열 값과 값 사이에 공백을 넣었음.
+            lotto.innerHTML = lottoArr.join(" ");
+        }
     </script>
 </body>
 </html>
