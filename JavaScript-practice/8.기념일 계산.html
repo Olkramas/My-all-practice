@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>기념일 계산</title>
+  <style>
+    #container{
+      width: 400px;
+      border: 1px solid #ccc;
+      padding-top: 30px;
+      margin: 0 auto;
+      
+    }
+    #day1{
+      text-align: center;
+    }
+    #day1 h3{
+      color:rgb(208, 25, 166);
+      font-size: 24px;;
+    }
+    #day1 p{
+      background-color: black;
+      color: #fff;
+      text-align: left;
+      padding: 8px;
+    }
+    ul{
+      border-bottom: 1px solid #ccc;
+      margin: 20px 40px;
+      padding: 20px;
+      list-style: none;
+      overflow: hidden;
+    }
+    #day2 ul:last-child{
+      border:none;
+    }
+    ul li{
+      float:left;
+      font-weight: bold;
+    }
+    ul li:last-child{
+      float: right;
+      font-weight: bold;
+    }
+    
+
+  </style>
+
+</head>
+<body>
+   <div id="container">
+    <div id="day1">
+      <h1>우리 만난 지</h1>
+      <h3 id="accent"> 몇일?</h3>
+      <p>기념일 계산</p>
+    </div>
+    <div id="day2">
+      <ul>
+        <li>100일</li>
+        <li id="date100"></li>
+      </ul>
+      
+      <ul>
+        <li>200일</li>
+        <li id="date200"></li>
+      </ul>
+
+      <ul>
+        <li>1년</li>
+        <li id="date365"></li>
+      </ul>
+      <ul>
+        <li>500일</li>
+        <li id="date500"></li>
+      </ul>
+  </div>
+    <script>
+     //웹요소 접근하기
+     let accent = document.querySelector("#accent");
+     let day100 = document.querySelector("#date100");
+     let day200 = document.querySelector("#date200");
+     let day365 = document.querySelector("#date365");
+     let day500 = document.querySelector("#date500");
+
+     //오늘날짜 Date객체 생성하기
+     let today = new Date();
+
+     //처음만난 날짜
+     let anniversary = new Date("2024-1-1");
+     
+     //현재 몇일인지 구하기, html안에 넣기
+     let now = today - anniversary;
+     accent.innerHTML = Math.ceil(now / (1000*60*60*24)) + "일";
+
+     //기념일 별 날짜구하는 함수 만들기
+     
+     function addDay(days, original) {
+      let resultDate = new Date(original);
+      resultDate.setDate(resultDate.getDate() + days);
+      return resultDate.toLocaleDateString();
+    }
+    day100.innerHTML = addDay(100, anniversary);
+    day200.innerHTML = addDay(200, anniversary);
+    day365.innerHTML = addDay(365, anniversary);
+    day500.innerHTML = addDay(500, anniversary);
+    /*
+     function addDays(days) {
+      let result = anniversary.setDate(anniversary.getDate() + days);
+      result = anniversary.toLocaleDateString();
+      anniversary = new Date("2022-10-18");
+      return result;
+    }
+    day100.innerHTML = addDays(100);
+    day200.innerHTML = addDays(200);
+    day365.innerHTML = addDays(365);
+    day500.innerHTML = addDays(500);
+    */
+    
+    
+    
+     /*
+     너무 반복이 많이 됨.
+     반복을 줄이기 위한 함수를 만들어야 됨.
+
+     1. 몇일을 더할건지 입력받을 매개변수 days 선언
+     2. innerHtml로 넣는건 외부로 빼고, 값을 리턴해서 innerHTML로 대입.
+     3. dayAfter???을 설정해서 날짜를 더한 값을 저장하고, 기념일을 원래 날짜로 만들어줘야함. 아니면 숫자 계속올라감.
+        -
+
+     let dayAfter100 = anniversary.setDate(anniversary.getDate() + 100);
+     dayAfter100 = anniversary.toLocaleDateString();
+     day100.innerHTML = dayAfter100;
+     anniversary = new Date("2022-10-18");
+     
+     let dayAfter200 = anniversary.setDate(anniversary.getDate() + 200);
+     dayAfter200 = anniversary.toLocaleDateString();
+     day200.innerHTML = dayAfter200;
+     anniversary = new Date("2022-10-18");
+
+     let dayAfter365 = anniversary.setDate(anniversary.getDate() + 365);
+     dayAfter365 = anniversary.toLocaleDateString();
+     day365.innerHTML = dayAfter365;
+     anniversary = new Date("2022-10-18");
+
+     let dayAfter500 = anniversary.setDate(anniversary.getDate() + 500);
+     dayAfter500 = anniversary.toLocaleDateString();
+     day500.innerHTML = dayAfter500;
+     anniversary = new Date("2022-10-18");
+      */
+    </script>
+     
+   </div>
+</body>
+</html>

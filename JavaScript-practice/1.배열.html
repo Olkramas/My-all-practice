@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script>
+        // 배열에 1에서 100사이의 무작위 수 10개를 입력
+        // 배열의 합 계산
+        // 최대값과 최소값 구하기
+        
+        //랜덤으로 나올 숫자들을 저장할 배열 선언
+        let arrNum = [];
+        
+        //랜덤한 숫자 10회 나올 수 있게 반복, 그리고 push로 배열에 바로 입력
+        for(let i=1; i<=10; i++) {
+            let ranNum = parseInt(Math.random() * 100  + 1) ;
+            arrNum.push(ranNum);
+        }
+        console.log(arrNum);
+        
+        //배열의 합계산
+        let sum = 0;
+        for(ele of arrNum) {
+            sum += ele;
+        }
+        console.log(sum);
+
+        //배열의 최대값
+        console.log(Math.max(...arrNum));
+
+        //for문으로 최대값 구하기
+        let max = 0;
+
+        for(let i=0; i<arrNum.length; i++) {
+            if(max < arrNum[i]) {
+                max = arrNum[i];
+            }
+        }
+        console.log(max);
+
+
+        //배열의 최소값
+        console.log(Math.min(...arrNum));
+
+        //for문으로 최소값 구하기
+        let min = arrNum[0];
+
+        for(let i=0; i<arrNum.length; i++) {
+            if(min > arrNum[i]) {
+                min = arrNum[i];
+            }
+        }
+        console.log(min);
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+</head>
+<body>
+    <form name="gugudan">
+        <label>단 입력 : <input type="text" id="dan"></label>
+        <button type="button" id="btn">출력</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        // 출력 버튼이 클릭되면 입력된 단만 출력
+
+        //웹요소에 접근
+        let table = document.querySelector("#dan");
+        let btn = document.querySelector("#btn");
+        let result = document.querySelector("#result");
+
+        //온클릭 이벤트 만들기
+        btn.onclick = btnFunc;
+
+        //이벤트에서 사용할 함수 만들기
+        function btnFunc() {
+            //#result에 출력하기 위한 레이아웃 변수 만들기
+            let layout = "";
+
+            //구구단을 계산할 for문 만들기
+            layout += "<div>";
+            for(let i=1; i<=9; i++) {
+                layout += `${table.value} * ${i} = ${table.value * i}<br>`;
+            }
+            layout += "</div>";
+
+            result.innerHTML = layout;
+        }
+
+
+    </script>
+</body>
+</html>
