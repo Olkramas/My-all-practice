@@ -1,0 +1,118 @@
+--1.
+SELECT   employee_id,
+         last_name,
+         salary,
+         department_id
+FROM     employees
+WHERE    salary BETWEEN 7000 AND 12000
+  AND    last_name LIKE ('H%');
+
+--2.
+SELECT   employee_id,
+         last_name,
+         job_id,
+         salary,
+         department_id
+FROM     employees
+WHERE    department_id IN (50, 60)
+  AND    salary > 5000;
+
+--3.
+SELECT   last_name,
+         (CASE WHEN salary < 5000 THEN salary * 1.2
+               WHEN salary < 10000 THEN salary * 1.15
+               WHEN salary < 15000 THEN salary * 1.1
+                                   ELSE salary
+          END)              
+FROM     employees
+WHERE    department_id = &num;
+
+--4.
+SELECT   d.department_id,
+         d.department_name,
+         l.city
+FROM     departments d JOIN locations l
+                         ON (d.location_id = l.location_id);
+                         
+--5.
+SELECT   employee_id,
+         last_name,
+         job_id
+FROM     employees
+WHERE    department_id IN (SELECT   department_id
+                           FROM     employees
+                           WHERE    job_id = 'IT');
+                         
+                         
+--6.
+SELECT   employee_id,
+         first_name,
+         last_name,
+         email,
+         phone_number,
+         hire_date,
+         job_id
+FROM     employees
+WHERE    hire_date < TO_DATE('2005', 'YYYY')
+  AND    job_id = 'ST_CLERK';
+
+--7.
+SELECT   last_name,
+         job_id,
+         salary,
+         commission_pct
+FROM     employees
+WHERE    commission_pct IS NOT NULL
+ORDER BY 4 desc;
+
+--8.
+CREATE TABLE PROF
+       (PROFNO   NUMBER(4),
+        NAME     VARCHAR2(15) NOT NULL,
+        ID       VARCHAR2(15) NOT NULL,
+        HIREDATE DATE,
+        PAY      NUMBER(4));
+        
+-- 9-1
+INSERT INTO prof(profno,
+                 name,
+                 id,
+                 hiredate,
+                 pay)
+VALUES (1001,
+        'Mark',
+        'm1001',
+        TO_DATE('07/03/01', 'YY/MM/DD'),
+        800);
+
+INSERT INTO prof(profno,
+                 name,
+                 id,
+                 hiredate)
+VALUES (1003,
+        'Adam',
+        'a1003',
+        TO_DATE('11/03/01', 'YY/MM/DD'));
+
+COMMIT;
+
+-- 9-2
+UPDATE prof
+SET    pay = 1200
+WHERE  pay = 800;
+
+-- 9-3
+DELETE FROM prof
+WHERE  profno = 1003;
+
+-- 10-1
+ALTER TABLE prof
+ADD primary key(profno);
+
+-- 10-2
+ALTER TABLE prof
+ADD      (gender CHAR(3));
+
+-- 10-3
+ALTER TABLE prof
+MODIFY   (name VARCHAR2(20));
