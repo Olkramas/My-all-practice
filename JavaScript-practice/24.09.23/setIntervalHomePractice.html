@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 500px;
+            margin: 0 auto;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p>현재시각 : 🕒
+            <span id="current" class="display"></span>
+        </p>
+        <button type="button" onclick="window.close()">닫기</button>
+    </div>
+    <script>
+        setInterval(displayNow, 10);
+        function displayNow() {
+            let now = new Date();
+            let currentTime = now.toLocaleTimeString();
+            document.querySelector("#current").innerHTML = currentTime;
+        }
+
+        //현재 창을 열고 닫는건 보안제약때문에 불가능함. 버튼으로 창을 열고, 그걸 닫는건 가능.
+        // let closeBtn = document.querySelector("#close");
+        // closeBtn.onclick =  window.open("", "", "width=200,height=200").close;
+        
+    </script>
+</body>
+</html>

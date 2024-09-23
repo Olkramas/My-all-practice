@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>기념일 계산</title>
+  <style>
+    #container{
+      width: 400px;
+      border: 1px solid #ccc;
+      padding-top: 30px;
+      margin: 0 auto;
+      
+    }
+    #day1{
+      text-align: center;
+    }
+    #day1 h3{
+      color:rgb(208, 25, 166);
+      font-size: 24px;;
+    }
+    #day1 p{
+      background-color: black;
+      color: #fff;
+      text-align: left;
+      padding: 8px;
+    }
+    ul{
+      border-bottom: 1px solid #ccc;
+      margin: 20px 40px;
+      padding: 20px;
+      list-style: none;
+      overflow: hidden;
+    }
+    #day2 ul:last-child{
+      border:none;
+    }
+    ul li{
+      float:left;
+      font-weight: bold;
+    }
+    ul li:last-child{
+      float: right;
+      font-weight: bold;
+    }
+    
+
+  </style>
+
+</head>
+<body>
+   <div id="container">
+    <div id="day1">
+      <h1>우리 만난 지</h1>
+      <h3 id="accent"> 몇일?</h3>
+      <p>기념일 계산</p>
+    </div>
+    <div id="day2">
+      <ul>
+        <li>100일</li>
+        <li id="date100"></li>
+      </ul>
+      
+      <ul>
+        <li>200일</li>
+        <li id="date200"></li>
+      </ul>
+
+      <ul>
+        <li>1년</li>
+        <li id="date365"></li>
+      </ul>
+      <ul>
+        <li>500일</li>
+        <li id="date500"></li>
+      </ul>
+  </div>
+    <script>
+    //웹 요소에 접근하기
+    let passDay = document.querySelector("#accent");
+
+    //날짜 계산
+    let startday = new Date("2024-08-21");
+    let today = new Date(); //오늘 날짜 생성
+    //몇일인지 계산
+    let result = Math.floor( (today - startday) / (1000 * 60 * 60 * 24));                  //날짜 - 날짜로 하면 1000분의 1초 단위로 나옴.
+    passDay.innerHTML = result + "일";
+
+
+    //기념일 날짜 계산 함수 선언
+    
+    function d_day(day) {
+      let anniDay = new Date(2024, 7, 21 + day);//달은 0부터 시작됨. ""안에 넣으면 ㅇㅋ
+      //한글로 년, 월, 일 나올 수 있게 하기
+      let month = anniDay.getMonth() + 1;
+      let date = anniDay.getDate();
+      let year = anniDay.getFullYear();
+      
+      //공백 넣는 방법 &nbsp넣기 두번 넣을거면 똑같은거 두번치면 됨.
+      if(month < 10) month = "&nbsp&nbsp" + month;
+      if(date < 10) date = "&nbsp&nbsp" + date;
+      //month = (month<10) ? "0" + month : month;
+
+      result = `${year}년 ${month}월 ${date}일`;
+
+      //이 방법 생각못했음. 이러면 id값이 바껴도 가져올 수 있음.
+      document.querySelector("#date" + day).innerHTML = result;
+    }
+
+    //함수 호출
+    d_day(100);
+    d_day(200);
+    d_day(365);
+    d_day(500);
+    
+
+    </script>
+     
+   </div>
+</body>
+</html>

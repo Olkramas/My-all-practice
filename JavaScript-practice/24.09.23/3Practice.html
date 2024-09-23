@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색 변경</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+        .dark {
+            background-color: black;
+            color: #fff;
+        }
+        #container{
+            width: 500px;
+            margin: 0 auto;
+        }
+        li{
+            display: inline-block;
+            padding: 10px;
+            list-style: none;
+            border: 1px solid #ccc;
+            
+        }
+        #result{
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        .dark {
+            background-color: #383838;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li class="chColor">green</li>
+            <li class="chColor">orange</li>
+            <li class="chColor">purple</li>
+        </ul>
+        <div id="result"></div>
+        <button type="button" id="bgBtn">배경색</button> 
+    </div>
+
+    <script>
+       //토글 형식으로 배경색 변경하기.
+
+       //웹요소 접근
+        let bgBtn = document.querySelector("#bgBtn");
+       //웹요소에 온클릭 이벤트 연결(익명함수로 연결하기)
+       bgBtn.onclick = () => {
+           //classList.toggle사용하기
+        document.body.classList.toggle("dark");
+       }
+
+       //각각의 색깔 박스를 클릭하면, #result의 배경색이 해당 박스안에 적힌 색으로 변경
+       //웹요소에 접근
+       let chColor = document.querySelectorAll(".chColor");
+       let result = document.querySelector("#result");
+
+       //노드리스트 각각의 값에 접근할 수 있는 for문 만들기 그리고 해당 값에 onclick이벤트 설정
+       for(let ele of chColor) {
+        ele.onclick = colorFunc;
+       }
+
+       function colorFunc() {
+           //이벤트와 연결된 함수에서 노드리스트 값에 있는 innerHTML을 가져오기
+            let colorName = this.innerHTML;    
+           //가져온 innerHTML값을 js에서 style.backgroundColor변경
+           result.style.backgroundColor = colorName;
+       }
+    </script>
+</body>
+</html>

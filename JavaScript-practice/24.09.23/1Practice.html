@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열에 1에서 100사이의 무작위 수 10개를 입력
+        // 배열의 합 계산
+        // 최대값과 최소값 구하기
+
+        //랜덤으로 나올 수들을 저장할 배열 선언
+        let nums = [];
+        
+        //합계를 저장할 변수 선언
+        let sum = 0;
+
+        //최대값을 저장할 변수 선언
+        let max = 0;
+
+        //최소값을 저장할 변수 선언
+        let min = 100;
+
+        //변수를 생성할 for문 만들기, 10번 반복
+        for(let i=0; i<10; i++) {
+            //무작위수 1-100까지
+            let su = Math.floor(Math.random() * 100 + 1);
+
+            if(nums.indexOf(su) == -1) {
+                //값이 중복되지 않게 indexOf로 확인하고 배열에 값 저장하기
+                nums[i] = su;
+
+                //배열의 합 구하기
+                sum += su;
+
+                //배열의 최대값 구하기
+                if(max < su) max = su;
+                //max가 su보다 작으면 max는 su값이 할당됨.
+
+                //배열의 최소값 구하기
+                if(min > su) min = su;
+
+            } else {
+                //같은 값이 들어오면 i를 하나빼서 없던것으로 만들기
+                i--;
+            }
+        }
+        console.log(nums);
+        console.log(`sum = ${sum}, max = ${max}, min = ${min}`);
+    </script>
+</body>
+</html>

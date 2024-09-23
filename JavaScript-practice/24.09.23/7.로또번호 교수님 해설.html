@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또번호</title>
+    <style>
+        #container{
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #lotto{
+            background: rgb(139, 207, 206);
+            padding: 10px;
+            margin: 10px;
+        }
+        button{
+            border-radius: 20px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: rgb(163, 202, 188);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>로또 번호 발생기</h1>
+        <button type="button" id="btn">클릭</button>
+        <div id="lotto"></div>
+    </div>
+    <script>
+       //while문을 이용해서 만들어보기.
+
+       /* 로또 룰
+       숫자 범위: 1부터 45까지의 숫자 중에서 선택합니다.
+        선택 개수: 총 6개의 숫자를 선택합니다.
+        중복 불가: 같은 번호를 중복해서 선택할 수 없습니다.
+       */
+        let numArr = [];
+
+       
+        //웹요소 접근하기
+        let btn = document.querySelector("#btn");
+        let result = document.querySelector("#lotto");
+
+        btn.onclick = btnFunc;
+
+        function btnFunc() {
+            while(true) {
+                let random = parseInt(Math.random() * 45 + 1);
+                if(random < 10) {
+                    random = "0" + random;
+                }
+                if(numArr.indexOf(random) == -1) {
+                    numArr.push(random);
+                    if(numArr.length > 5) break;
+                }
+            }
+            result.innerHTML = numArr.join("&nbsp&nbsp");
+            numArr = [];
+        }
+    </script>
+</body>
+</html>

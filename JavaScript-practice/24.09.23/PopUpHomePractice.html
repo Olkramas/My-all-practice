@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="openPobup()">
+    <div id="container">
+        <button type="button" id="btn">현재시간보기</button>
+    </div>
+
+    <script>
+        let btn = document.querySelector("#btn");
+
+        btn.onclick = () => {
+            //가로세로 가운데 정렬
+            let left = (screen.availWidth - 600) / 2;
+            let top = (screen.availHeight - 600) / 2;
+            window.open("setIntervalHomePractice.html"
+                        , "pop", `width = 600, height= 600, left=${left}, top=${top}`)
+        }
+
+        function openPobup() {
+            let newWin = window.open("setIntervalHomePractice.html", "pop", `width=600, height=600`);
+            if(newWin == null) {
+                alert("팝업이 차단되었습니다. 팝업차단을 해제해주세요");
+            }
+        }
+    </script>
+</body>
+</html>

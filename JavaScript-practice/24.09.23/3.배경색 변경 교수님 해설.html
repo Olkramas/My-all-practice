@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색 변경</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+        .dark {
+            background-color: black;
+            color: #fff;
+        }
+        #container{
+            width: 500px;
+            margin: 0 auto;
+        }
+        li{
+            display: inline-block;
+            padding: 10px;
+            list-style: none;
+            border: 1px solid #ccc;
+            
+        }
+        #result{
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li class="chColor">green</li>
+            <li class="chColor">orange</li>
+            <li class="chColor">purple</li>
+            <!-- <li onclick="change('green')">green</li>
+            <li onclick="change('orange')">orange</li>
+            <li onclick="change('purple')">purple</li> -->
+        </ul>
+        <div id="result"></div>
+        <button type="button" id="bgBtn">배경색</button> 
+        <!-- 버튼에 타입 안넣으면 submit으로 들어감. -->
+    </div>
+
+    <script>
+        //배경색 변경(토글)
+        let bgBtn = document.querySelector("#bgBtn");
+        bgBtn.onclick = function() {
+            document.body.classList.toggle('dark'); //배경색 눌리면 dark라는 클래스를 넣었다 뺐다 할 수 있음.
+        }
+        
+        //색변경(인라인 이벤트로 처리)
+        function change(color) {
+            let result = document.querySelector("#result")
+            result.style.backgroundColor = color;
+        }
+
+        //웹요소 접근
+        let color = document.querySelectorAll(".chColor");
+        let result = document.querySelector("#result");
+
+        //온클릭 이벤트 만들기
+        for(let ele of color) {
+            ele.onclick = colorFunc;
+        }
+
+        function colorFunc() {
+            let color = this.innerHTML;
+            result.style.backgroundColor = color;
+        }
+
+        //배열에 색을 넣어서 랜덤으로 색이 출력되게 할 수 있음.
+
+
+    </script>
+</body>
+</html>
