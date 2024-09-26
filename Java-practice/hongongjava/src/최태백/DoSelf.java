@@ -40,7 +40,6 @@ public class DoSelf {
 		//3
 		
 		int ranNum = (int) (Math.random() * 51) + 50;
-		boolean runToGame = true;
 		System.out.println(ranNum);
 		
 		while(true) {
@@ -111,6 +110,7 @@ public class DoSelf {
 		boolean game6 = true;
 		int userWin = 0;
 		int comWin = 0;
+		
 		
 		while(game6) {
 			int random = (int) (Math.random() * 2) + 1;
